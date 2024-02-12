@@ -38,6 +38,9 @@ insert into categorie_depense(categorie) values ('produit');
 insert into categorie_depense(categorie) values ('entretien');
 
 
+insert into ceuillette(date_ceuillette,choix_ceuilleur,choix_parcelle,poids_ceuilli)values('2024-02-09','Alicia',1,3);
+insert into ceuillette(date_ceuillette,choix_ceuilleur,choix_parcelle,poids_ceuilli)values('2024-02-09','Jean',2,2);
+insert into ceuillette(date_ceuillette,choix_ceuilleur,choix_parcelle,poids_ceuilli)values('2024-02-10','Claude',2,4);
 
 
 

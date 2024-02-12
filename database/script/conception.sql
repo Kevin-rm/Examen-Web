@@ -44,3 +44,11 @@ CREATE TABLE depense (
     id_categorie_depense INT REFERENCES categorie_depense(id),
     montant              DECIMAL(10, 2)
 ) ENGINE=InnoDB;
+
+CREATE TABLE ceuillette(
+    id               INT PRIMARY KEY AUTO_INCREMENT,
+    date_ceuillette  date ,
+    choix_ceuilleur  VARCHAR(20),
+    choix_parcelle   INT,
+    poids_ceuilli    INT
+)ENGINE=InnoDB;

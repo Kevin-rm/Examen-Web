@@ -13,7 +13,7 @@ function get_mysql_connection()
     // Options par défaut
     $host     = 'localhost';
     $port     = '3306';
-    $db_name  = 'cin';
+    $db_name  = 'gestion_the';
     $user     = 'root';
     $password = '';
 
