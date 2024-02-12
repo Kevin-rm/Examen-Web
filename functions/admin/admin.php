@@ -163,5 +163,19 @@ function delete_depense($id)
     return delete(null,'the_depense','id=$id');
 }
 
+function get_salary($id_categorie)
+{
+    return findWithFilters(null, 'the_depense', 'id_catetgorie_depense=$id_categorie',null);
+}
+function update_salary($id_categorie,$montant)
+{
+    $data=
+    [
+        "montant"=>$montant
+    ];
+    return update(null,'the_depense',$data,'id_categorie_depense=$id_categorie_depense');
+}
+}
+
 
 
