@@ -1,11 +1,14 @@
 <?php
-    $default_page = 'layout_1.php?who=cueilleur';
 
-    $valid_who = ['cueilleur', 'admin'];
-    if (empty($_GET['who']) || !in_array($_GET['who'], $valid_who))
-        header("Location: $default_page");
+session_start();
 
-    $who = $_GET['who'];
+$default_page = 'layout_1.php?who=cueilleur';
+
+$valid_who = ['cueilleur', 'admin'];
+if (empty($_GET['who']) || !in_array($_GET['who'], $valid_who))
+    header("Location: $default_page");
+
+$who = $_GET['who'];
 ?>
 
 <!DOCTYPE html>
@@ -51,23 +54,43 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../../assets/js/config.js"></script>
+
+    <style>
+        .static-toast {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+    </style>
 </head>
 
 <body>
 <!-- Content -->
 
-<div class="static-toast">
-    <div class="bs-toast toast fade show bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <i class="bx bx-bell me-2"></i>
-            <div class="me-auto fw-semibold">Erreur</div>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-            # incorrecte.
+<?php
+if (isset($_SESSION['flash_messages'])) {
+    $error_message = $_SESSION['flash_messages'];
+    ?>
+    <div class="static-toast">
+        <div class="bs-toast toast fade show bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="bx bx-bell me-2"></i>
+                <div class="me-auto fw-semibold">Erreur</div>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                <?php
+                echo $error_message;
+                unset($_SESSION['flash_messages']);
+                ?>
+            </div>
         </div>
     </div>
-</div>
+    <?php
+}
+?>
 <div class="container-xxl">
     <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner">

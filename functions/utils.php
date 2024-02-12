@@ -78,3 +78,8 @@ function string_contains($haystack, $needle)
 {
     return strpos($haystack, $needle) !== false;
 }
+
+function redirect($url) {
+    header("Location: $url");
+    die();
+}
