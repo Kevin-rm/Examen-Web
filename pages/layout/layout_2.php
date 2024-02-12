@@ -126,5 +126,6 @@ $content_page = get_page_to_include($_GET['page']);
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <script src="../js/layout_2.js"></script>
+
 </body>
 </html>

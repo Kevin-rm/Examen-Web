@@ -22,5 +22,4 @@ if (!categorie_depense_exists($categorie_depense))
 if ($montant <= 0) redirect_with_error('Le montant doit être strictement positif', INSERTION_DEPENSES_VIEW);
 
 // Si tout s'est bien passé
-add_depense($categorie_depense, $montant);
-redirect();
+//add_depense($categorie_depense, $montant);
