@@ -3,10 +3,10 @@ insert into the_admin (id) values (1);
 insert into the_admin (id) values (2);
 
 
-insert into the_member(nom,pseudo ,genre , date_naissance, mot_de_passe)values('Alicia','Lilice','F','2000-02-15',sha2('alicia',256));
-insert into the_member(nom,pseudo ,genre , date_naissance, mot_de_passe)values('Jean','Jean4','M','2001-09-30',sha2('jean',256));
-insert into the_member(nom,pseudo ,genre , date_naissance, mot_de_passe)values('Claude','Claude','M','1998-08-10',sha2('claude',256));
-insert into the_member(nom,pseudo ,genre , date_naissance, mot_de_passe)values('Princia','Prissi','F','2000-03-23',sha2('princia',256));
+insert into the_membre(nom,pseudo ,genre , date_naissance, mot_de_passe)values('Alicia','Lilice','F','2000-02-15',sha2('alicia',256));
+insert into the_membre(nom,pseudo ,genre , date_naissance, mot_de_passe)values('Jean','Jean4','M','2001-09-30',sha2('jean',256));
+insert into the_membre(nom,pseudo ,genre , date_naissance, mot_de_passe)values('Claude','Claude','M','1998-08-10',sha2('claude',256));
+insert into the_membre(nom,pseudo ,genre , date_naissance, mot_de_passe)values('Princia','Prissi','F','2000-03-23',sha2('princia',256));
 
 
 insert into the_variete_the(nom,occupation , rendement) values ('noir',2,6);
