@@ -46,6 +46,7 @@ function get_total_weight($ceuilleur)
 function get_rendement($id)
 {
     try {
+        //somme rendement avec operation*rendement car c'est rendement par pieds
         $requete = "SELECT SUM(occupation*rendement)AS rendement FROM the_parcelle_avec_rendement WHERE id_parcelle = :id ";
         $stmt = get_mysql_connection()->prepare($requete);
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);
