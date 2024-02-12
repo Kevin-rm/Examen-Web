@@ -1,3 +1,3 @@
 <?php
 
-header('Location: pages/inside/index.php');
+header('Location: pages/layout/layout_1.php?who=cueilleur');

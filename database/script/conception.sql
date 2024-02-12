@@ -6,7 +6,7 @@ CREATE TABLE admin (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(50),
     pseudo VARCHAR(30),
-    mot_de_passe VARCHAR(100)
+    mot_de_passe VARCHAR(200)
 ) ENGINE=InnoDB;
 
 CREATE TABLE cueilleur (
@@ -14,8 +14,10 @@ CREATE TABLE cueilleur (
     nom            VARCHAR(50),
     genre          VARCHAR(1),
     date_naissance DATE,
-    mot_de_passe   VARCHAR(100)
+    mot_de_passe   VARCHAR(200)
 ) ENGINE=InnoDB;
+ALTER TABLE cueilleur 
+ADD pseudo VARCHAR(30);
 
 CREATE TABLE variete_the ( 
     id         INT PRIMARY KEY AUTO_INCREMENT,

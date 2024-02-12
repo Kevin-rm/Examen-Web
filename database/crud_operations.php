@@ -24,7 +24,7 @@ function findAll($connection, $tableName)
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     } catch (PDOException $e) {
-        throw new PDOException('Erreur dans CRUDManager.findAll : ' .$e->getMessage());
+        throw new PDOException('Erreur dans crud_operations sur findAll : ' .$e->getMessage());
     }
 }
 
@@ -53,14 +53,14 @@ function findWithFilters($connection, $tableName, $whereCondition, ...$columnsTo
     foreach ($columnsToShow as $column)
         if (is_string($column)) throw new InvalidArgumentException('Chaque élément de $columnsToShow doit être une chaîne de caractères');
 
-    $columns = empty($columnsToShow) ? '*' : implode(", ", $columnsToShow);
+    $columns = (count($columnsToShow) == 1 && empty($columnsToShow[0]) || empty($columnsToShow)) ? '*' : implode(", ", $columnsToShow);
     try {
         $stmt = $connection->prepare("SELECT $columns FROM $tableName WHERE $whereCondition");
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     } catch (PDOException $e) {
-        throw new PDOException('Erreur dans CRUDManager.findWithFilters : ' . $e->getMessage());
+        throw new PDOException('Erreur dans crud_operations sur findWithFilters : ' . $e->getMessage());
     }
 }
 
@@ -93,7 +93,7 @@ function selectFromSQLRaw($connection, $query)
 
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     } catch (PDOException $e) {
-        throw new PDOException('Erreur dans CRUDManager.selectFromSQLRaw : ' . $e->getMessage());
+        throw new PDOException('Erreur dans crud_operations sur selectFromSQLRaw : ' . $e->getMessage());
     }
 }
 
@@ -126,7 +126,7 @@ function add($connection, $tableName, $data)
 
         return $stmt->execute();
     } catch (PDOException $e) {
-        throw new PDOException('Erreur dans CRUDManager.add : ' . $e->getMessage());
+        throw new PDOException('Erreur dans crud_operations sur add : ' . $e->getMessage());
     }
 }
 
@@ -169,7 +169,7 @@ function update($connection, $tableName, $data, $whereCondition)
 
         return $stmt->execute();
     } catch (PDOException $e) {
-        throw new PDOException('Erreur dans CRUDManager.update : ' . $e->getMessage());
+        throw new PDOException('Erreur dans crud_operations sur update : ' . $e->getMessage());
     }
 }
 
@@ -199,7 +199,7 @@ function delete($connection, $tableName, $whereCondition)
 
         return $stmt->execute();
     } catch (PDOException $e) {
-        throw new PDOException('Erreur dans CRUDManager.delete : ' . $e->getMessage());
+        throw new PDOException('Erreur dans crud_operations sur delete : ' . $e->getMessage());
     }
 }
 
