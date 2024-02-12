@@ -14,3 +14,14 @@ function get_membre_by_pseudo($pseudo)
         null
     )[0];
 }
+
+function redirect_with_error($message, $page, $who)
+{
+    $_SESSION['flash_messages'] = $message;
+    redirect("$page?who=$who");
+}
+
+function verify_password($input_password, $actual_password)
+{
+    return hash('sha256', $input_password) === $actual_password;
+}

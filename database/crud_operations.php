@@ -55,6 +55,7 @@ function findWithFilters($connection, $tableName, $whereCondition, ...$columnsTo
 
     $columns = (count($columnsToShow) == 1 && empty($columnsToShow[0]) || empty($columnsToShow)) ? '*' : implode(", ", $columnsToShow);
     try {
+        echo "SELECT $columns FROM $tableName WHERE $whereCondition";
         $stmt = $connection->prepare("SELECT $columns FROM $tableName WHERE $whereCondition");
         $stmt->execute();
 
