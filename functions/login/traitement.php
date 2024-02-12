@@ -1,6 +1,6 @@
 <?php
 
-require_once 'login.php';
+require_once 'functions.php';
 include_once '../utils.php';
 
 session_start();

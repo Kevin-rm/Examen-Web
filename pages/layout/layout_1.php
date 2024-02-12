@@ -2,6 +2,8 @@
 
 session_start();
 
+include_once('../../functions/utils.php');
+
 $default_page = 'layout_1.php?who=cueilleur';
 
 $valid_who = ['cueilleur', 'admin'];
