@@ -2,10 +2,13 @@
 
 session_start();
 
+require_once ('../../functions/cueilleur/general_func.php');
+
 // Redirection par défaut
-if (isset($_GET['page'])) {
+if (!isset($_GET['page'])) {
 
 }
+$content_page = get_page_to_include($_GET['page']);
 ?>
 
 <!DOCTYPE html>
@@ -125,12 +128,7 @@ if (isset($_GET['page'])) {
             <!-- Content wrapper -->
             <div class="content-wrapper">
                 <!-- Content -->
-
-                <!-- includes here -->
-                <?php
-                    //include_once("../user_cueillete.php");
-                ?>
-                
+                <?php include_once($content_page);?>
             </div>
             <!-- / Content -->
 

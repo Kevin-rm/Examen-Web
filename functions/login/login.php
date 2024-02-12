@@ -1,7 +1,6 @@
 <?php
 
 require_once '../../database/crud_operations.php';
-include_once '../utils.php';
 
 /*
  * Ensembles des fonctions sur le login

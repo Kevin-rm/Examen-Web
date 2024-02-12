@@ -5,8 +5,7 @@ session_start();
 $default_page = 'layout_1.php?who=cueilleur';
 
 $valid_who = ['cueilleur', 'admin'];
-if (empty($_GET['who']) || !in_array($_GET['who'], $valid_who))
-    header("Location: $default_page");
+if (empty($_GET['who']) || !in_array($_GET['who'], $valid_who)) redirect($default_page);
 
 $who = $_GET['who'];
 ?>
