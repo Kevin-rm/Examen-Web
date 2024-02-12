@@ -34,3 +34,23 @@ function format_parcelle($parcelle)
 {
     return "N° parcelle : $parcelle->id. " . "Surface : $parcelle->surface ha";
 }
+
+function categorie_depense_exists($id_categorie_depense)
+{
+    return empty(
+        findWithFilters(
+            null,
+            'the_categorie_depense',
+            "id = $id_categorie_depense"
+        )[0]
+    );
+}
+
+function add_depense($id_categorie_depense, $montant)
+{
+    $data= [
+        "id_categorie_depense" => $id_categorie_depense,
+        "montant"              => $montant
+    ];
+    return add(null,'depense', $data);
+}

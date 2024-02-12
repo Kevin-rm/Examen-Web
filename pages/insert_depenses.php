@@ -28,7 +28,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="montant">Montant</label>
-                            <input type="number" class="form-control" id="montant" name="montant" />
+                            <input type="number" class="form-control" id="montant" name="montant" min="0" />
                         </div>
                         <button type="submit" class="btn btn-primary">Confirmer</button>
                     </form>
