@@ -10,7 +10,7 @@
                     <small class="text-muted float-end">utilisateur</small>
                 </div>
                 <div class="card-body">
-                    <form action="../../functions/cueilleur/traitement_cueillete.php" method="post">
+                    <form id="insert-cueillete">
                         <div class="mb-3">
                             <label class="form-label" for="date">Date</label>
                             <input type="date" class="form-control" id="date" name="date" />
@@ -19,7 +19,7 @@
                             <label for="parcelle" class="form-label">Parcelle</label>
                             <select class="form-select" id="parcelle" aria-label="Default select example"
                                 name="parcelle">
-                                <option selected>Choisir une parcelle</option>
+                                <option selected>Choix</option>
                                 <?php
                                 foreach (get_all_parcelle() as $parcelle) { ?>
                                     <option value="<?= $parcelle->id ?>"><?= format_parcelle($parcelle) ?></option>
@@ -37,3 +37,5 @@
         </div>
     </div>
 </div>
+
+<script src="../js/insert_cueillete.js"></script>

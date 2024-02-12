@@ -25,7 +25,12 @@ function get_all_parcelle()
     return findAll(null, 'the_parcelle');
 }
 
+function get_all_categorie_depense()
+{
+    return findAll(null, 'the_categorie_depense');
+}
+
 function format_parcelle($parcelle)
 {
-    return "Numéro de parcelle : $parcelle->id. " . "Surface : $parcelle->surface ha";
+    return "N° parcelle : $parcelle->id. " . "Surface : $parcelle->surface ha";
 }

@@ -83,3 +83,9 @@ function redirect($url) {
     header("Location: $url");
     die();
 }
+
+function redirect_with_error($message, $page, $who)
+{
+    $_SESSION['flash_messages'] = $message;
+    redirect("$page?who=$who");
+}
