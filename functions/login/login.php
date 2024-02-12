@@ -1,18 +1,16 @@
 <?php
-include ("../../database/db_connector.php");
+include ("../../database/crud_operations.php");
+require_once("../utils.php");
 
-function get_admin_by_id($id)
-{        
-    $sql ="select * from admin where id = :id";
-    
-    $stmt = get_mysql_connection()->prepare($sql);
-    $stmt->execute(array(':id'=>$id));
-    $name="";
-
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
-    {
-        $name = $row['nom'];
-    }
-    return $name;
-
+function get_all_admin()
+{
+    return findAll(null,'admin');
 }
+function get_admin_by_id($id)
+{
+    return findWithFilters(null, 'admin', 'id=$id',null);
+}
+
+
+
+

@@ -18,19 +18,19 @@ insert into parcelle(surface)values(2);
 insert into parcelle(surface)values(1);
 insert into parcelle(surface)values(2);
 
-insert into rel_variete_the_parcelle(id_parcelle, id_the)values (1,3);
-insert into rel_variete_the_parcelle(id_parcelle, id_the)values (1,2);
-insert into rel_variete_the_parcelle(id_parcelle, id_the)values (1,4);
-insert into rel_variete_the_parcelle(id_parcelle, id_the)values (1,1);
+insert into rel_variete_the_parcelle(id_parcelle, id_variete_the)values (1,3);
+insert into rel_variete_the_parcelle(id_parcelle, id_variete_the)values (1,2);
+insert into rel_variete_the_parcelle(id_parcelle, id_variete_the)values (1,4);
+insert into rel_variete_the_parcelle(id_parcelle, id_variete_the)values (1,1);
 
-insert into rel_variete_the_parcelle(id_parcelle, id_the)values (2,1);
-insert into rel_variete_the_parcelle(id_parcelle, id_the)values (2,3);
-insert into rel_variete_the_parcelle(id_parcelle, id_the)values (2,4);
+insert into rel_variete_the_parcelle(id_parcelle, id_variete_the)values (2,1);
+insert into rel_variete_the_parcelle(id_parcelle, id_variete_the)values (2,3);
+insert into rel_variete_the_parcelle(id_parcelle, id_variete_the)values (2,4);
 
 
-insert into rel_variete_the_parcelle(id_parcelle, id_the)values (3,4);
-insert into rel_variete_the_parcelle(id_parcelle, id_the)values (3,2);
-insert into rel_variete_the_parcelle(id_parcelle, id_the)values (3,1);
+insert into rel_variete_the_parcelle(id_parcelle, id_variete_the)values (3,4);
+insert into rel_variete_the_parcelle(id_parcelle, id_variete_the)values (3,2);
+insert into rel_variete_the_parcelle(id_parcelle, id_variete_the)values (3,1);
 
 insert into categorie_depense(categorie) values ('engrais');
 insert into categorie_depense(categorie) values ('carburant');
