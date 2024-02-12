@@ -43,27 +43,27 @@ function get_total_weight($ceuilleur)
     }
 }
 
+//poids restant sur le parcelle
+
 function get_rendement($id)
 {
     try {
-        //somme rendement avec operation*rendement car c'est rendement par pieds
+        //somme rendement avec operation*rendement car c'est rendement par pieds                                                                                                                                     
         $requete = "SELECT SUM(occupation*rendement)AS rendement FROM the_parcelle_avec_rendement WHERE id_parcelle = :id ";
         $stmt = get_mysql_connection()->prepare($requete);
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);
 
         $stmt->execute();
         
-        // Récupération du résultat
         $rendement = $stmt->fetchColumn();
         
         return $rendement !== false ? $rendement : 0; // Retourne 0 si aucun résultat n'est trouvé
     } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
         return false;
-    }    
-
-    
+    }       
 }   
+//pour reduire le rendement a partir des donnees du formulaire
 function reduce($id,$weight)
 {
     $old_rendement=get_rendement($id);
@@ -74,10 +74,6 @@ function reduce($id,$weight)
 
     return update(null,'the_rendement_par_parcelles',$data,'id=$id');
 }
-
-
-
-//poids restant sur le parcelle
 
 
 
