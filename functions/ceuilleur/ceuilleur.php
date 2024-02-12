@@ -71,7 +71,7 @@ function cout_revient($id_cueilleur,$date_min,$date_max)
    
     $cout_total=selectFromSQLRaw(null, $query)[0];
     $poids_total=get_poids_total_cueillette($id_cueilleur,$date_min,$date_max);
-    $cout_revient=$cout_total*$poids_total;
+    $cout_revient=$cout_total/$poids_total;
     
     return $cout_revient;
   

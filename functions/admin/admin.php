@@ -175,7 +175,7 @@ function update_salary($id_categorie,$montant)
     ];
     return update(null,'the_depense',$data,'id_categorie_depense=$id_categorie_depense');
 }
-}
+
 
 
 
