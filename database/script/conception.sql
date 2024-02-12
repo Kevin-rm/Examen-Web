@@ -41,21 +41,49 @@ CREATE TABLE the_categorie_depense (
 CREATE TABLE the_depense (
     id                   INT PRIMARY KEY AUTO_INCREMENT,
     id_categorie_depense INT REFERENCES categorie_depense(id),
-    montant              DECIMAL(10, 2)
+    montant              DECIMAL(10, 2),
+    date_depense         date
+    
 ) ENGINE=InnoDB;
 
---ensemble de parcelle et variete de the
-CREATE VIEW the_parcelle_et_variete_the as
-    SELECT
-    relation.id_variete_the ,
-    relation.id_parcelle,
-    the.occupation,
-    the.rendement 
-    FROM the_rel_variete_the_parcelle relation join the_variete_the the on relation.id_variete_the=the.id;
+CREATE TABLE the_ceuillette(
+    id              INT PRIMARY KEY AUTO_INCREMENT, 
+    date_ceuillette date,
+    choix_parcelle  INT,
+    poids_ceuilli   INT
+)ENGINE=InnoDB;
 
-CREATE VIEW the_rendement_par_parcelles as
-    SELECT 
-    sum(relation.occupation*relation.rendement) as rendement,
-    relation.id_parcelle
-    from the_parcelle_et_variete_the relation
-    GROUP BY  relation.id_parcelle;
+--ensemble de parcelle et variete de the
+-- CREATE VIEW the_parcelle_et_variete_the as
+--     SELECT
+--     relation.id_variete_the ,
+--     relation.id_parcelle,
+--     the.occupation,
+--     the.rendement 
+--     FROM the_rel_variete_the_parcelle relation join the_variete_the the on relation.id_variete_the=the.id;
+
+-- CREATE VIEW the_rendement_par_parcelles as
+--     SELECT 
+--     sum(relation.occupation*relation.rendement) as rendement,
+--     relation.id_parcelle
+--     from the_parcelle_et_variete_the relation
+--     GROUP BY  relation.id_parcelle;
+
+
+--     SELECT 
+--     sum((parcelle.surface*10000)*rendement)/occupation as rendement,
+--     id_parcelle 
+--     from parcelle_et_variete_the pv join parcelle p on p.id=pv.id_parcelle  ;
+-- --     
+-- SELECT 
+--     SUM((p.surface * 10000) * rendement) / occupation AS rendement,
+--     pv.id_parcelle 
+-- FROM 
+--     parcelle_et_variete_the pv 
+-- JOIN 
+--     the_parcelle p ON p.id = pv.id_parcelle
+-- GROUP BY 
+--     pv.id_parcelle;
+
+
+

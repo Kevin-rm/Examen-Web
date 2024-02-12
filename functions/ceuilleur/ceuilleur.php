@@ -1,80 +1,88 @@
 <?php 
 include ("../../database/crud_operations.php");
-//require_once("../utils.php");
+require_once("../utils.php");
 
-//ajouter ceuilleur 
-function add_ceuilleur($nom,$genre,$date_de_naissance,$mot_de_passe)
+function get_page_to_include($page)
 {
-    $data=
-    [
-        "nom"=>$nom,
-        "genre"=>$genre,
-        "date_naissance"=>$date_de_naissance,
-        "mot_de_passe"=>hash('sha256', $mot_de_passe)
-    ];
-    return add(null,'ceuilleur',$data );
-}
-//ajouter depense 
-function add_depense($id_categorie_depense,$montant)
-{
-    $data=
-    [
-        "id_categorie_depense"=>$id_categorie_depense,
-        "montant"=>$montant
-    ];
-    return add(null,'depense',$ata );
-}
-//poids total ceuillete
-function get_total_weight($ceuilleur)
-{
-    try {
-        $requete = "SELECT SUM(poids_ceuilli) AS total_weight FROM ceuillette WHERE choix_ceuilleur = :ceuilleur ";
-        $stmt = get_mysql_connection()->prepare($requete);
-        $stmt->bindParam(':ceuilleur', $ceuilleur, PDO::PARAM_STR);
-        $stmt->execute();
-        
-        // Récupération du résultat
-        $total_weight = $stmt->fetchColumn();
-        
-        return $total_weight !== false ? $total_weight : 0; // Retourne 0 si aucun résultat n'est trouvé
-    } catch (PDOException $e) {
-        echo "Erreur : " . $e->getMessage();
-        return false;
+    $valiny = '../';
+    switch ($page) {
+        case 'insertion-cueillette':
+            $valiny .= 'insert_cueillete';
+            break;
+        case 'insertion-depenses':
+            $valiny .= 'insert_depenses';
+            break;
+        default:
+            $valiny = '';
+            break;
     }
+
+    return $valiny . '.php';
 }
 
-//poids restant sur le parcelle
-
-function get_rendement($id)
+function get_all_parcelle()
 {
-    try {
-        //somme rendement avec operation*rendement car c'est rendement par pieds                                                                                                                                     
-        $requete = "SELECT SUM(occupation*rendement)AS rendement FROM the_parcelle_avec_rendement WHERE id_parcelle = :id ";
-        $stmt = get_mysql_connection()->prepare($requete);
-        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+    return findAll(null, 'the_parcelle');
+}
 
-        $stmt->execute();
-        
-        $rendement = $stmt->fetchColumn();
-        
-        return $rendement !== false ? $rendement : 0; // Retourne 0 si aucun résultat n'est trouvé
-    } catch (PDOException $e) {
-        echo "Erreur : " . $e->getMessage();
-        return false;
-    }       
-}   
-//pour reduire le rendement a partir des donnees du formulaire
-function reduce($id,$weight)
+function get_all_categorie_depense()
 {
-    $old_rendement=get_rendement($id);
+    return findAll(null, 'the_categorie_depense');
+}
+
+function format_parcelle($parcelle)
+{
+    return "N° parcelle : $parcelle->id. " . "Surface : $parcelle->surface ha";
+}
+
+function categorie_depense_exists($id_categorie_depense)
+{
+    return empty(
+        findWithFilters(
+            null,
+            'the_categorie_depense',
+            "id = $id_categorie_depense"
+        )[0]
+    );
+}
+
+function add_depense($id_categorie_depense, $montant)
+{
+    $data= [
+        "id_categorie_depense" => $id_categorie_depense,
+        "montant"              => $montant
+    ];
+    return add(null,'depense', $data);
+}
+
+// Poids total cueillette entre 2 dates
+function get_poids_total_cueillette($id_cueilleur, $date_min, $date_max)
+{
+    $query = "SELECT SUM(poids_cueilli) AS value FROM the_cueillette " .
+             "WHERE date > '$date_min' AND date < '$date_max' " .
+             "AND id_cueilleur = $id_cueilleur";
+    return selectFromSQLRaw(null, $query)[0];
+}
+
+function cout_revient($id_cueilleur,$date_min,$date_max)
+{
+    $query = "SELECT SUM(montant) AS value FROM the_depense ".
+             "WHERE date_depense between :date_min and :date_max ";
+   
+    $cout_total=selectFromSQLRaw(null, $query)[0];
+    $poids_total=get_poids_total_cueillette($id_cueilleur,$date_min,$date_max);
+    $cout_revient=$cout_total*$poids_total;
+    
+    return $cout_revient;
+  
+}
+function add_ceuilette($date_ceuillette,$choix_parcelle,$poids_ceuilli)
+{
     $data=
     [
-        "rendement"=>$old_rendement-$weight
+        "date_ceuillette"=>$date_ceuillette,
+        "choix_parcelle"=>$choix_parcelle,
+        "poids_ceuilli"=>$poids_ceuilli
     ];
-
-    return update(null,'the_rendement_par_parcelles',$data,'id=$id');
+    return add(null,'the_ceuillette',$data );
 }
-
-
-
-//cout de revient en kg
