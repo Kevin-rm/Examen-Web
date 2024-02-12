@@ -57,5 +57,5 @@ CREATE VIEW the_rendement_par_parcelles as
     SELECT 
     sum(relation.occupation*relation.rendement) as rendement,
     relation.id_parcelle
-    from parcelle_et_variete_the relation
+    from the_parcelle_et_variete_the relation
     GROUP BY  relation.id_parcelle;
