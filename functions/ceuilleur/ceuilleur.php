@@ -1,4 +1,7 @@
 <?php 
+include ("../../database/crud_operations.php");
+require_once("../utils.php");
+
 //ajouter ceuilleur 
 function add_ceuilleur($nom,$genre,$date_de_naissance,$mot_de_passe)
 {
