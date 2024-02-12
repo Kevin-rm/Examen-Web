@@ -1,28 +1,21 @@
 <?php
 
 require_once '../../database/crud_operations.php';
-include_once '../utils.php';
 
 /*
  * Ensembles des fonctions sur le login
  */
-
-function get_admin_by_pseudo_and_password($pseudo, $password)
+function get_membre_by_pseudo($pseudo)
 {
     return findWithFilters(
         null,
-        'admin',
-        "pseudo = '$pseudo' AND mot_de_passe = sha2('$password', 256)",
+        'the_membre',
+        "pseudo = '$pseudo'",
         null
-    );
+    )[0];
 }
 
-function get_cueilleur_by_pseudo_and_password($pseudo, $password)
+function verify_password($input_password, $actual_password)
 {
-    return findWithFilters(
-        null,
-        'cueilleur',
-        "pseudo = '$pseudo' AND mot_de_passe = sha2('$password', 256)",
-        null
-    );
+    return hash('sha256', $input_password) === $actual_password;
 }

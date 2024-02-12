@@ -2,11 +2,12 @@
 
 session_start();
 
+include_once('../../functions/utils.php');
+
 $default_page = 'layout_1.php?who=cueilleur';
 
 $valid_who = ['cueilleur', 'admin'];
-if (empty($_GET['who']) || !in_array($_GET['who'], $valid_who))
-    header("Location: $default_page");
+if (empty($_GET['who']) || !in_array($_GET['who'], $valid_who)) redirect($default_page);
 
 $who = $_GET['who'];
 ?>
@@ -166,8 +167,6 @@ if (isset($_SESSION['flash_messages'])) {
 
 <!-- Page JS -->
 
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 
 </html>

@@ -83,3 +83,15 @@ function redirect($url) {
     header("Location: $url");
     die();
 }
+
+function redirect_with_error($message, $url)
+{
+    $_SESSION['flash_messages'] = $message;
+    redirect($url);
+}
+
+function redirect_with_success($message, $url)
+{
+    $_SESSION['success'] = $message;
+    redirect($url);
+}
