@@ -1,12 +1,11 @@
-
-DROP   DATABASE gestion_the;
-CREATE DATABASE gestion_the;
-USE             gestion_the;
+DROP   DATABASE IF EXISTS gestion_the;
+CREATE DATABASE           gestion_the;
+USE                       gestion_the;
 
 CREATE TABLE admin (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(50),
-    pseudo VARCHAR(30), 
+    pseudo VARCHAR(30),
     mot_de_passe VARCHAR(100)
 ) ENGINE=InnoDB;
 
@@ -36,7 +35,12 @@ CREATE TABLE rel_variete_the_parcelle (
 ) ENGINE=InnoDB;
 
 CREATE TABLE categorie_depense (
-    id INT PRIMARY KEY, 
+    id        INT PRIMARY KEY AUTO_INCREMENT, 
     categorie VARCHAR(20)
 ) ENGINE=InnoDB;
 
+CREATE TABLE depense (
+    id                   INT PRIMARY KEY AUTO_INCREMENT,
+    id_categorie_depense INT REFERENCES categorie_depense(id),
+    montant              DECIMAL(10, 2)
+) ENGINE=InnoDB;
