@@ -1,9 +1,11 @@
 <?php
 
-function get_page_to_include($url_page)
+require_once '../../database/crud_operations.php';
+
+function get_page_to_include($page)
 {
     $valiny = '../';
-    switch ($url_page) {
+    switch ($page) {
         case 'insertion-cueillette':
             $valiny .= 'insert_cueillete';
             break;
@@ -16,4 +18,14 @@ function get_page_to_include($url_page)
     }
 
     return $valiny . '.php';
+}
+
+function get_all_parcelle()
+{
+    return findAll(null, 'the_parcelle');
+}
+
+function format_parcelle($parcelle)
+{
+    return "Numéro de parcelle : $parcelle->id. " . "Surface : $parcelle->surface ha";
 }

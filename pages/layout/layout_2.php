@@ -2,12 +2,14 @@
 
 session_start();
 
-require_once ('../../functions/cueilleur/general_func.php');
+require_once '../../functions/cueilleur/cueilleur.php';
+include_once '../../functions/utils.php';
 
 // Redirection par défaut
-if (!isset($_GET['page'])) {
+$valid_pages = ['insertion-cueillette', 'insertion-depenses'];
+if (!isset($_GET['page']) || !in_array($_GET['page'], $valid_pages))
+    redirect('../../pages/layout/layout_2.php?page=insertion-cueillette');
 
-}
 $content_page = get_page_to_include($_GET['page']);
 ?>
 
