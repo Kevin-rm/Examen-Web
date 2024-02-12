@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once 'cueilleur.php';
 require_once '../utils.php';
 
@@ -8,6 +10,7 @@ const INSERTION_DEPENSES_VIEW = '../../pages/layout/layout_2.php?page=insertion-
 if (
     empty($_POST['date']) ||
     empty($_POST['categorie-depense']) ||
+    $_POST['categorie-depense'] === 'Choix' ||
     empty($_POST['montant'])
 )  redirect_with_error('Veuillez remplir tout le formulaire', INSERTION_DEPENSES_VIEW);
 
@@ -22,4 +25,5 @@ if (!categorie_depense_exists($categorie_depense))
 if ($montant <= 0) redirect_with_error('Le montant doit être strictement positif', INSERTION_DEPENSES_VIEW);
 
 // Si tout s'est bien passé
-//add_depense($categorie_depense, $montant);
+add_depense($categorie_depense, $montant, $date);
+redirect_with_success('Dépenses enregistrées', INSERTION_DEPENSES_VIEW);

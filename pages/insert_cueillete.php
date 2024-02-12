@@ -11,6 +11,7 @@
                 </div>
                 <div class="card-body">
                     <form id="insert-cueillete">
+                        <input type="hidden" name="cueilleur" value="<?= $_SESSION['membre']->id ?>">
                         <div class="mb-3">
                             <label class="form-label" for="date">Date</label>
                             <input type="date" class="form-control" id="date" name="date" />

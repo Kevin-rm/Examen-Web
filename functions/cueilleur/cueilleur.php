@@ -37,7 +37,7 @@ function format_parcelle($parcelle)
 
 function categorie_depense_exists($id_categorie_depense)
 {
-    return empty(
+    return !empty(
         findWithFilters(
             null,
             'the_categorie_depense',
@@ -46,13 +46,14 @@ function categorie_depense_exists($id_categorie_depense)
     );
 }
 
-function add_depense($id_categorie_depense, $montant)
+function add_depense($id_categorie_depense, $montant, $date)
 {
     $data= [
-        "id_categorie_depense" => $id_categorie_depense,
-        "montant"              => $montant
+        'id_categorie_depense' => $id_categorie_depense,
+        'montant'              => $montant,
+        'date'                 => $date
     ];
-    return add(null,'depense', $data);
+    return add(null,'the_depense', $data);
 }
 
 // Poids total cueillette entre 2 dates

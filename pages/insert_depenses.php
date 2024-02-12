@@ -1,3 +1,48 @@
+<?php
+
+if (isset($_SESSION['success'])) {
+    ?>
+    <!-- Success pop -->
+    <div class="static-toast">
+        <div class="bs-toast toast fade show bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="bx bx-bell me-2"></i>
+                <div class="me-auto fw-semibold">Succès!</div>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                <?= $_SESSION['success'] ?>
+            </div>
+        </div>
+    </div>
+    <!--/Success pop -->
+    <?php
+    unset($_SESSION['success']);
+}
+?>
+
+<!--Error pop -->
+<?php
+if (isset($_SESSION['flash_messages'])) {
+    ?>
+    <div class="static-toast">
+        <div class="bs-toast toast fade show bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="bx bx-bell me-2"></i>
+                <div class="me-auto fw-semibold">Erreur</div>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                <?= $_SESSION['flash_messages'] ?>
+            </div>
+        </div>
+    </div>
+    <?php
+    unset($_SESSION['flash_messages']);
+}
+?>
+<!--/Error pop-->
+
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Saisie/</span>Dépenses</h4>
 
