@@ -42,8 +42,6 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     
-    <!--CSS error-->
-    <link rel="stylesheet" href="../assets/css/erreur.css">
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -251,19 +249,25 @@
                       <small class="text-muted float-end">admin</small>
                     </div>
                     <div class="card-body">
-                        <form id="monFormulaire" action="#" method="post" onsubmit="return validerFormulaire('monFormulaire');">
+                        <form  action="#" method="post">
                         <div class="mb-3">
                             <label for="ceuilleur" class="form-label">Ceuilleur</label>
-                            <select class="form-select" id="parcelle"  aria-label="Default select example" name="ceuilleur">
+                            <select class="form-select" id="parcelle"  aria-label="Default select example" name="ceuilleur" required>
                               <option selected>Choix</option>
                               <option value="1">Un</option>
                               <option value="2">Deux</option>
                               <option value="3">Trois</option>
                             </select>
+                            <div class="invalid-feedback">
+                              ceuilleur invalide.
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="montant">Montant</label>
-                            <input type="number" class="form-control" id="montant" name="montant" placeholder="montant" />
+                            <input type="number" class="form-control" id="montant" name="montant" placeholder="montant"  required/>
+                            <div class="invalid-feedback">
+                              montant invalide.
+                            </div>
                         </div>
                         <input type="submit" value="Envoyer" class="btn btn-primary">
                       </form>
@@ -319,8 +323,7 @@
 <!-- Main JS -->
 <script src="../assets/js/main.js"></script>
 
-<!-- Page JS ERROR-->
-<script src="../assets/js/erreur.js"></script>
+
 
 <!-- Page JS -->
 <script src="../assets/js/dashboards-analytics.js"></script>

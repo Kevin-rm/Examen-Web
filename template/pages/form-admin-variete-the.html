@@ -39,8 +39,6 @@
     <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../assets/css/demo.css" />
 
-    <!--CSS error-->
-    <link rel="stylesheet" href="../assets/css/erreur.css">
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
@@ -53,8 +51,51 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
   </head>
-
+  <style>
+    .static-toast {
+        position: fixed;
+        top: 20px;
+        /* Adjust the top value as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2000;
+        /* Adjust the z-index as needed */
+    }
+</style>
   <body>
+     <!--SUCCESS POP-->
+     <div class="static-toast">
+      <div
+     class="bs-toast toast fade show bg-success"
+     role="alert"
+     aria-live="assertive"
+     aria-atomic="true"
+      >
+     <div class="toast-header">
+       <i class="bx bx-bell me-2"></i>
+       <div class="me-auto fw-semibold">Reussi!</div>
+       <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+     </div>
+     <div class="toast-body">
+       insertion valide
+     </div>
+   </div>
+     </div>
+   <!--/SUCCESS POP-->  
+   <!--Error pop -->
+   <div class="static-toast">
+    <div class="bs-toast toast fade show bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <i class="bx bx-bell me-2"></i>
+            <div class="me-auto fw-semibold">Erreur</div>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            # incorrecte.
+        </div>
+    </div>
+</div>
+<!--/Error pop-->
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -234,10 +275,11 @@
           </nav>
 
           <!-- / Navbar -->
-
+         
           <!-- Content wrapper -->
           <div class="content-wrapper">
             <!-- Content -->
+                      
 
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Insertion/</span> Variete the</h4>
@@ -255,14 +297,19 @@
                         <div class="mb-3">
                           <label class="form-label" for="nom">Nom</label>
                           <input type="text" class="form-control" id="nom" name="nom"  placeholder="nom" />
+                          <div class="invalid-feedback">
+                            nom invalide.
+                          </div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="Occupation">Occupation</label>
                             <input type="number" class="form-control" id="occupation" name="occupation"  placeholder="occupation" />
+                            
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="Rendement">Rendement</label>
                             <input type="number" class="form-control" id="rendement" name="rendement" placeholder="rendement" />
+                            
                         </div>
                         <input type="submit" value="Envoyer" class="btn btn-primary">
                       </form>
@@ -280,7 +327,7 @@
       <div class="mb-2 mb-md-0">
         ©
         <script>
-            document.write(new Date().getFullYear());
+          document.write(new Date().getFullYear());
         </script>
         , made with ❤️ by
         Karen,Kevin,Harena
@@ -320,8 +367,7 @@
 
 <!-- Page JS -->
 <script src="../assets/js/dashboards-analytics.js"></script>
-<!-- Page JS ERROR-->
-<script src="../assets/js/erreur.js"></script>
+
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
