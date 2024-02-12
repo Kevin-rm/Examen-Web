@@ -1,6 +1,6 @@
 
-insert into admin (nom,pseudo , mot_de_passe) values ('Rakoto','Koto',sha2('koto',256),);
-insert into admin (nom,pseudo , mot_de_passe) values ('Randria','Andria',sha2('andria',256),);
+insert into the_admin (id) values (1);
+insert into the_admin (id) values (2);
 
 
 insert into the_member(nom,pseudo ,genre , date_naissance, mot_de_passe)values('Alicia','Lilice','F','2000-02-15',sha2('alicia',256));
