@@ -54,3 +54,12 @@ function add_depense($id_categorie_depense, $montant)
     ];
     return add(null,'depense', $data);
 }
+
+// Poids total cueillette entre 2 dates
+function get_poids_total_cueillette($id_cueilleur, $date_min, $date_max)
+{
+    $query = "SELECT SUM(poids_cueilli) AS value FROM the_cueillette " .
+             "WHERE date > '$date_min' AND date < '$date_max' " .
+             "AND id_cueilleur = $id_cueilleur";
+    return selectFromSQLRaw(null, $query)[0];
+}
