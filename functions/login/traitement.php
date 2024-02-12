@@ -30,16 +30,17 @@ if ($statut === 'admin') {
         $_SESSION['flash_messages'] = 'Administrateur introuvable. Vérifier votre pseudo ou votre mot de passe.';
         redirect("$login_page" . "?who=$statut");
     }
-    else {
-
+    else { // Redirige vers la page Admin
+        // redirect('layout_2.php?page=insertion-cueillette');
     }
 } else {
     $cueilleur = get_cueilleur_by_pseudo_and_password($pseudo, $password);
-    if (empty($admin)) {
+    if (empty($cueilleur)) {
         $_SESSION['flash_messages'] = 'Cueilleur introuvable. Vérifier votre pseudo ou votre mot de passe.';
         redirect("$login_page" . "?who=$statut");
     }
-    else {
-
+    else { // Redirige vers la page de cueilleur
+        $_SESSION['cueilleur'] = $cueilleur;
+        redirect('../../pages/layout/layout_2.php?page=insertion-cueillette');
     }
 }
