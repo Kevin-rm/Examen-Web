@@ -42,6 +42,8 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
+     <!--CSS error-->
+     <link rel="stylesheet" href="../assets/css/erreur.css">
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -130,12 +132,12 @@
   
                 <ul class="menu-sub">
                   <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="list-admin-variete-the.html" class="menu-link">
                       <div data-i18n="Variete de the">Variete de the</div>
                     </a>
                   </li>
                   <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="list-admin-parcelle.html" class="menu-link">
                       <div data-i18n="Parcelle">Parcelle</div>
                     </a>
                   </li>
@@ -249,7 +251,7 @@
                         <small class="text-muted float-end">admin</small>
                       </div>
                       <div class="card-body">
-                        <form action="#" method="post">
+                        <form id="monFormulaire" action="#" method="post" onsubmit="return validerFormulaire('monFormulaire');">
                           <div class="mb-3">
                               <label for="parcelle" class="form-label">Parcelle</label>
                               <select class="form-select" id="parcelle"  aria-label="Default select example" name="parcelle">
@@ -328,6 +330,9 @@
 
 <!-- Page JS -->
 <script src="../assets/js/dashboards-analytics.js"></script>
+
+<!-- Page JS ERROR-->
+<script src="../assets/js/erreur.js"></script>
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>

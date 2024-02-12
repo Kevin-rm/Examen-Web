@@ -42,6 +42,8 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
+     <!--CSS error-->
+     <link rel="stylesheet" href="../assets/css/erreur.css">
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -249,7 +251,7 @@
                         <small class="text-muted float-end">admin</small>
                       </div>
                       <div class="card-body">
-                        <form action="#" method="post">
+                        <form id="monFormulaire" action="#" method="post" onsubmit="return validerFormulaire('monFormulaire');">
                           
                           <div class="mb-3">
                             <label class="form-label" for="nom">Nom</label>
@@ -312,6 +314,9 @@
 
 <!-- Page JS -->
 <script src="../assets/js/dashboards-analytics.js"></script>
+
+<!-- Page JS ERROR-->
+<script src="../assets/js/erreur.js"></script>
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>

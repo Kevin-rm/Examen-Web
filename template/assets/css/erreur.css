@@ -1,0 +1,9 @@
+.static-toast {
+    position: fixed;
+    top: 20px;
+    /* Adjust the top value as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    /* Adjust the z-index as needed */
+}
