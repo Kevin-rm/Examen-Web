@@ -3,9 +3,9 @@ CREATE DATABASE           gestion_the;
 USE                       gestion_the;
 
 CREATE TABLE admin (
-    id           INT PRIMARY KEY AUTO_INCREMENT,
-    nom          VARCHAR(50),
-    pseudo       VARCHAR(30), 
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(50),
+    pseudo VARCHAR(30),
     mot_de_passe VARCHAR(100)
 ) ENGINE=InnoDB;
 
