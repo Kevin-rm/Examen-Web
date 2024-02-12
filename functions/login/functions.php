@@ -1,7 +1,6 @@
 <?php
 
 require_once '../../database/crud_operations.php';
-require_once '../utils.php';
 
 /*
  * Ensembles des fonctions sur le login
@@ -13,7 +12,5 @@ function get_membre_by_pseudo($pseudo)
         'the_membre',
         "pseudo = '$pseudo'",
         null
-    );
+    )[0];
 }
-
-display_var(get_membre_by_pseudo('johnny'));
