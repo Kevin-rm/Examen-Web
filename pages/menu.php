@@ -14,9 +14,9 @@
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
         <li class="menu-item">
-            <a href="" class="menu-link">
+            <a href="?page=list-with-filters" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="">Dashboard</div>
+                <div data-i18n="">Liste</div>
             </a>
         </li>
 
@@ -29,7 +29,7 @@
                 <div data-i18n="">Saisie</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item active">
+                <li class="menu-item">
                     <a href="?page=insertion-cueillette" class="menu-link">
                         <div data-i18n="">Cueillette</div>
                     </a>

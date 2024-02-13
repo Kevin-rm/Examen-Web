@@ -6,7 +6,7 @@ require_once '../../functions/cueilleur/cueilleur.php';
 include_once '../../functions/utils.php';
 
 // Redirection par défaut
-$valid_pages = ['insertion-cueillette', 'insertion-depenses'];
+$valid_pages = ['insertion-cueillette', 'insertion-depenses', 'list-with-filters'];
 if (!isset($_GET['page']) || !in_array($_GET['page'], $valid_pages))
     redirect('../../pages/layout/layout_2.php?page=insertion-cueillette');
 

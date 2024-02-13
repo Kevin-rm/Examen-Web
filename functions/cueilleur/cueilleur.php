@@ -12,6 +12,9 @@ function get_page_to_include($page)
         case 'insertion-depenses':
             $valiny .= 'insert_depenses';
             break;
+        case 'list-with-filters':
+            $valiny .= 'list_with_date_filters';
+            break;
         default:
             $valiny = '';
             break;
@@ -63,4 +66,16 @@ function get_poids_total_cueillette($id_cueilleur, $date_min, $date_max)
              "WHERE date > '$date_min' AND date < '$date_max' " .
              "AND id_cueilleur = $id_cueilleur";
     return selectFromSQLRaw(null, $query)[0];
+}
+
+function get_cout_revient($id_cueilleur, $date_min, $date_max)
+{
+    $query = "SELECT SUM(montant) AS value FROM the_depense " .
+        "WHERE date_depense between :date_min and :date_max ";
+
+    $cout_total = selectFromSQLRaw(null, $query)[0];
+    $poids_total = get_poids_total_cueillette($id_cueilleur, $date_min, $date_max);
+    $cout_revient = $cout_total / $poids_total;
+
+    return $cout_revient;
 }
