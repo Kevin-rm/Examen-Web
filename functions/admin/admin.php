@@ -29,6 +29,9 @@ function get_page_to_include($page)
         case 'insertion-categorie-depense':
             $valiny .= 'insertion_categorie_depense';
             break;
+        case 'list-variete-the':
+            $valiny .= 'list_variete_the';
+            break;
         default:
             break;
     }
@@ -65,6 +68,10 @@ function add_parcelle($surface)
     return add(null,'the_parcelle',$data );
 }
 
+function get_all_variete_the()
+{
+    return findAll(null,'the_variete_the');
+}
 
 
 // Partie 2/3
