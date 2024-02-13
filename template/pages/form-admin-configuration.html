@@ -16,7 +16,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>salaire ceuilleur - Forms</title>
+    <title>Variete the - Forms</title>
 
     <meta name="description" content="" />
 
@@ -41,7 +41,7 @@
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-    
+
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -51,8 +51,51 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
   </head>
-
+  <style>
+    .static-toast {
+        position: fixed;
+        top: 20px;
+        /* Adjust the top value as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2000;
+        /* Adjust the z-index as needed */
+    }
+</style>
   <body>
+     <!--SUCCESS POP-->
+     <div class="static-toast">
+      <div
+     class="bs-toast toast fade show bg-success"
+     role="alert"
+     aria-live="assertive"
+     aria-atomic="true"
+      >
+     <div class="toast-header">
+       <i class="bx bx-bell me-2"></i>
+       <div class="me-auto fw-semibold">Reussi!</div>
+       <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+     </div>
+     <div class="toast-body">
+       insertion valide
+     </div>
+   </div>
+     </div>
+   <!--/SUCCESS POP-->  
+   <!--Error pop -->
+   <div class="static-toast">
+    <div class="bs-toast toast fade show bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <i class="bx bx-bell me-2"></i>
+            <div class="me-auto fw-semibold">Erreur</div>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            # incorrecte.
+        </div>
+    </div>
+</div>
+<!--/Error pop-->
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -60,7 +103,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="#" class="app-brand-link">
+            <a href="index.html" class="app-brand-link">
               <span class="app-brand-text demo menu-text fw-bolder ms-2">Gestion de thé</span>
             </a>
 
@@ -73,86 +116,75 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-           
-            
-            <!-- Insertion-->
-            <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Insertion</span>
-            </li>
-            <li class="menu-item open">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Gestion">Gestion</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="form-admin-variete-the.html" class="menu-link">
-                    <div data-i18n="Variete the">Variete the</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="form-admin-parcelle.html" class="menu-link">
-                    <div data-i18n="Parcelle">Parcelle</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                    <a href="form-admin-ceuilleur.html" class="menu-link">
-                      <div data-i18n="Ceuilleur">Ceuilleur</div>
-                    </a>
-                </li>
-                <li class="menu-item ">
-                    <a href="form-admin-categorie-depense.html" class="menu-link">
-                      <div data-i18n="Categorie Depense">Categorie Depense</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="form-admin-salaire-ceuilleur.html" class="menu-link">
-                      <div data-i18n="Salaire des ceuilleurs">Salaire des ceuilleurs par kilos</div>
-                    </a>
-                </li>
-              </ul>
-            </li>
-            <!-- /Insertion-->
-
-            <!-- Liste -->
-            <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Liste</span>
-            </li>
+          <!-- Insertion-->
+          <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Insertion</span>
+          </li>
           <li class="menu-item open">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Gestion">Gestion</div>
-              </a>
-
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="list-admin-variete-the.html" class="menu-link">
-                    <div data-i18n="Variete de the">Variete de the</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="list-admin-parcelle.html" class="menu-link">
-                    <div data-i18n="Parcelle">Parcelle</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="list-admin-ceuilleur.html" class="menu-link">
+            <ul class="menu-sub">
+              <li class="menu-item">
+                <a href="form-admin-variete-the.html" class="menu-link">
+                  <div data-i18n="Variete the">Variete the</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="form-admin-parcelle.html" class="menu-link">
+                  <div data-i18n="Parcelle">Parcelle</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                  <a href="form-admin-ceuilleur.html" class="menu-link">
                     <div data-i18n="Ceuilleur">Ceuilleur</div>
                   </a>
-                </li>
-                <li class="menu-item">
-                  <a href="list-admin-categorie-depense.html" class="menu-link">
-                    <div data-i18n="Categorie">Categorie depense</div>
+              </li>
+              <li class="menu-item ">
+                  <a href="form-admin-categorie-depense.html" class="menu-link">
+                    <div data-i18n="Categorie Depense">Categorie Depense</div>
                   </a>
-                </li>
-                <li class="menu-item">
-                  <a href="list-admin-salaire-ceuilleur.html" class="menu-link">
-                    <div data-i18n="Salaire">Salaire des ceuilleurs par kilos</div>
+              </li>
+              <li class="menu-item">
+                  <a href="form-admin-salaire-ceuilleur.html" class="menu-link">
+                    <div data-i18n="Salaire des ceuilleurs">Salaire des ceuilleurs par kilos</div>
                   </a>
-                </li>
-              </ul>
-            </li>
-              <!--/Liste-->
+              </li>
+            </ul>
+          </li>
+          <!-- /Insertion-->
+
+          <!-- Liste -->
+          <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Liste</span>
+          </li>
+        <li class="menu-item open">
+            <ul class="menu-sub">
+              <li class="menu-item">
+                <a href="list-admin-variete-the.html" class="menu-link">
+                  <div data-i18n="Variete de the">Variete de the</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="list-admin-parcelle.html" class="menu-link">
+                  <div data-i18n="Parcelle">Parcelle</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="list-admin-ceuilleur.html" class="menu-link">
+                  <div data-i18n="Ceuilleur">Ceuilleur</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="list-admin-categorie-depense.html" class="menu-link">
+                  <div data-i18n="Categorie">Categorie depense</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="list-admin-salaire-ceuilleur.html" class="menu-link">
+                  <div data-i18n="Salaire">Salaire des ceuilleurs par kilos</div>
+                </a>
+              </li>
+            </ul>
+          </li>
+            <!--/Liste-->
             
           </ul>
         </aside>
@@ -187,13 +219,13 @@
         </nav>
 
           <!-- / Navbar -->
-
+         
           <!-- Content wrapper -->
           <div class="content-wrapper">
             <!-- Content -->
-
+                      
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Insertion/</span> Prix de vente</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Insertion/</span> Variete the</h4>
 
               <!-- Layout -->
               <div class="row">
@@ -204,9 +236,9 @@
                       <small class="text-muted float-end">admin</small>
                     </div>
                     <div class="card-body">
-                        <form  action="#" method="post">
+                        <form action="#" method="post">
                             <div class="mb-3">
-                                <label for="variete the" class="form-label">Varite the</label>
+                                <label for="mois" class="form-label">Mois</label>
                                 <select class="form-select" id="variete-the"  aria-label="Default select example" name="varite-the">
                                   <option selected>Choix</option>
                                   <option value="1">One</option>
@@ -215,10 +247,17 @@
                                 </select>
                             </div>
                         <div class="mb-3">
-                            <label class="form-label" for="montant">Montant</label>
-                            <input type="number" class="form-control" id="montant" name="montant" placeholder="montant"  required/>
+                          <label class="form-label" for="poids-minimal-journalier">Poids minimal journalier</label>
+                          <input type="number" class="form-control" id="poids-minimal-journalier" name="poids-minimal-journalier"  placeholder="Poids minimal journalier" />
                         </div>
-
+                        <div class="mb-3">
+                            <label class="form-label" for="poids-min">Poids minimum</label>
+                            <input type="number" class="form-control" id="poids-min" name="poids-min"  placeholder="poids minimum" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="poids-max">Poids maximum</label>
+                            <input type="number" class="form-control" id="poids-max" name="poids-max" placeholder="poids maximum" />
+                        </div>
                         <input type="submit" value="Envoyer" class="btn btn-primary">
                       </form>
                     </div>
@@ -227,7 +266,9 @@
                 </div>
               </div>
             </div>
-            <!-- / Content -->
+            <!-- / Content  configuration mois select poids minimal,bonus,malus
+
+            -->
 
             <!-- Footer -->
  <footer class="content-footer footer bg-footer-theme">
@@ -235,7 +276,7 @@
       <div class="mb-2 mb-md-0">
         ©
         <script>
-            document.write(new Date().getFullYear());
+          document.write(new Date().getFullYear());
         </script>
         , made with ❤️ by
         Karen,Kevin,Harena
@@ -272,8 +313,6 @@
 
 <!-- Main JS -->
 <script src="../assets/js/main.js"></script>
-
-
 
 <!-- Page JS -->
 <script src="../assets/js/dashboards-analytics.js"></script>
