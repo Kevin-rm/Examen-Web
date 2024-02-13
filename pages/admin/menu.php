@@ -40,11 +40,6 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="" class="menu-link">
-                        <div data-i18n="Salaire des ceuilleurs">Salaire des cueilleurs par kilos</div>
-                    </a>
-                </li>
-                <li class="menu-item">
                     <a href="?page=configuration" class="menu-link">
                         <div data-i18n="">Configuration</div>
                     </a>
@@ -77,11 +72,6 @@
                 <li class="menu-item">
                     <a href="?page=list-categorie-depense" class="menu-link">
                         <div data-i18n="Categorie">Catégorie dépenses</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="" class="menu-link">
-                        <div data-i18n="Salaire">Salaire des cueilleurs par kilos</div>
                     </a>
                 </li>
             </ul>

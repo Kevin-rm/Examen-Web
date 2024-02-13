@@ -74,15 +74,19 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="poids-minimal-journalier">Poids minimal journalier</label>
-                            <input type="number" class="form-control" id="poids-minimal-journalier" name="poids-minimal-journalier"  placeholder="Poids minimal journalier" />
+                            <input type="text" class="form-control" id="poids-minimal-journalier" name="poids-minimal-journalier"  placeholder="Poids minimal journalier des cueilleurs" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="salaire-cueilleur">Salaire cueilleur</label>
+                            <input type="text" class="form-control" id="salaire-cueilleur" name="salaire-cueilleur"  placeholder="Par kilogramme" />
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="poids-min">Bonus</label>
-                            <input type="number" class="form-control" id="bonus" name="bonus"  placeholder="bonus" />
+                            <input type="text" class="form-control" id="bonus" name="bonus"  placeholder="bonus" />
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="poids-max">Mallus</label>
-                            <input type="number" class="form-control" id="mallus" name="mallus" placeholder="mallus" />
+                            <label class="form-label" for="mallus">Mallus</label>
+                            <input type="text" class="form-control" id="mallus" name="mallus" placeholder="mallus" />
                         </div>
                         <input type="submit" value="Envoyer" class="btn btn-primary">
                     </form>
