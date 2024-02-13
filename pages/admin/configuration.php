@@ -78,7 +78,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="salaire-cueilleur">Salaire cueilleur</label>
-                            <input type="text" class="form-control" id="salaire-cueilleur" name="salaire-cueilleur"  placeholder="Par kilogramme" />
+                            <input type="text" class="form-control" id="salaire-cueilleur" name="salaire-cueilleur"  placeholder="Salaire par kilos" />
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="poids-min">Bonus</label>
@@ -91,7 +91,7 @@
                         <input type="submit" value="Envoyer" class="btn btn-primary">
                     </form>
                 </div>
-            </div>
-        </div>
+            </<div>
+        </div
     </div>
 </div>

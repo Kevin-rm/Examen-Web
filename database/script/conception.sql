@@ -42,7 +42,7 @@ CREATE TABLE the_depense (
     id_cueilleur         INT REFERENCES the_membre(id),
     id_categorie_depense INT REFERENCES the_categorie_depense(id),
     montant              DECIMAL(10, 2),
-    date                 DATE
+    date                 DATE CHECK (date >= '2023-01-01')
 ) ENGINE=InnoDB;
 
 CREATE TABLE the_cueillette (
@@ -50,7 +50,7 @@ CREATE TABLE the_cueillette (
     id_cueilleur  INT REFERENCES the_membre(id),
     id_parcelle   INT REFERENCES the_parcelle(id),
     poids_cueilli DECIMAL(10, 2),
-    date          DATE
+    date          DATE CHECK (date >= '2023-01-01')
 ) ENGINE=InnoDB;
 
 -- Partie 2/3
