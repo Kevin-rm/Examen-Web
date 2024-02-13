@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once '../../functions/cueilleur/cueilleur.php';
+require_once '../../functions/admin/admin.php';
 include_once '../../functions/utils.php';
 
 // Redirection par défaut
@@ -10,7 +10,7 @@ include_once '../../functions/utils.php';
 //if (!isset($_GET['page']) || !in_array($_GET['page'], $valid_pages))
   //  redirect('../../pages/layout/layout_2.php?page=insertion-cueillette');
 
-//$content_page = get_page_to_include($_GET['page']);
+$content_page = get_page_to_include($_GET['page']);
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +94,7 @@ include_once '../../functions/utils.php';
             <!-- Content wrapper -->
             <div class="content-wrapper">
                 <!-- Content -->
-                <?php //include_once($content_page);?>
+                <?php include_once($content_page);?>
             </div>
             <!-- / Content -->
 

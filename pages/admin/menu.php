@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="index.html" class="app-brand-link">
+        <a href="?page=insertion-variete-the" class="app-brand-link">
             <span class="app-brand-text demo menu-text fw-bolder ms-2">Gestion de thé</span>
         </a>
 
@@ -25,22 +25,22 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item active">
-                    <a href="form-admin-variete-the.html" class="menu-link">
+                    <a href="?page=insertion-variete-the" class="menu-link">
                         <div data-i18n="Variete the">Variete the</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="form-admin-parcelle.html" class="menu-link">
+                    <a href="?page=insertion-parcelle" class="menu-link">
                         <div data-i18n="Parcelle">Parcelle</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="form-admin-ceuilleur.html" class="menu-link">
+                    <a href="?page=insertion-cueilleur" class="menu-link">
                         <div data-i18n="Ceuilleur">Ceuilleur</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="form-admin-categorie-depense.html" class="menu-link">
+                    <a href="?page=insertion-categorie-depense" class="menu-link">
                         <div data-i18n="Categorie Depense">Categorie Depense</div>
                     </a>
                 </li>
