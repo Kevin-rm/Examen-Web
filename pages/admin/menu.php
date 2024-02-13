@@ -12,17 +12,12 @@
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner py-1">
-        <!-- Dashboard -->
 
         <!-- Insertion-->
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Insertion</span>
         </li>
-        <li class="menu-item active open">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Gestion">Gestion</div>
-            </a>
+        
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="?page=insertion-variete-the" class="menu-link">
@@ -39,7 +34,7 @@
                         <div data-i18n="Ceuilleur">Ceuilleur</div>
                     </a>
                 </li>
-                <li class="menu-item active">
+                <li class="menu-item">
                     <a href="?page=insertion-categorie-depense" class="menu-link">
                         <div data-i18n="Categorie Depense">Categorie Depense</div>
                     </a>
@@ -50,19 +45,12 @@
                     </a>
                 </li>
             </ul>
-        </li>
         <!-- /Insertion-->
 
         <!-- Liste -->
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Liste</span>
         </li>
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Gestion">Gestion</div>
-            </a>
-
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="list-admin-variete-the.html" class="menu-link">
@@ -90,7 +78,6 @@
                     </a>
                 </li>
             </ul>
-        </li>
         <!--/Liste-->
     </ul>
 </aside>
