@@ -66,3 +66,6 @@ ALTER TABLE the_cueillette
 ADD COLUMN poids_minimal_journalier DECIMAL(10, 2),
 ADD COLUMN bonus DECIMAL(10, 2),
 ADD COLUMN mallus DECIMAL(10, 2);
+
+ALTER TABLE the_variete_the
+ADD COLUMN prix_vente DECIMAL(10, 2);
