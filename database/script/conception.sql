@@ -39,13 +39,39 @@ CREATE TABLE the_categorie_depense (
 
 CREATE TABLE the_depense (
     id                   INT PRIMARY KEY AUTO_INCREMENT,
+    id_cueilleur         INT REFERENCES the_membre(id),
     id_categorie_depense INT REFERENCES the_categorie_depense(id),
-    montant              DECIMAL(10, 2)
+    montant              DECIMAL(10, 2),
+    date                 DATE CHECK (date >= '2023-01-01')
 ) ENGINE=InnoDB;
 
 CREATE TABLE the_cueillette (
-    date          DATE,
+    id            INT PRIMARY KEY AUTO_INCREMENT,
     id_cueilleur  INT REFERENCES the_membre(id),
     id_parcelle   INT REFERENCES the_parcelle(id),
-    poids_cueilli DECIMAL(10, 2)
+    poids_cueilli DECIMAL(10, 2),
+    date          DATE CHECK (date >= '2023-01-01')
 ) ENGINE=InnoDB;
+
+-- Partie 2/3
+CREATE TABLE the_configuration (
+    salaire_cueilleur        DECIMAL(10, 2),
+    poids_minimal_journalier DECIMAL(10, 2),
+    bonus                    DECIMAL(10, 2) DEFAULT 0,
+    mallus                   DECIMAL(10, 2) DEFAULT 0,
+    mois_regeneration        INT            DEFAULT 0
+) ENGINE=InnoDB;
+
+ALTER TABLE the_cueillette
+ADD COLUMN poids_minimal_journalier DECIMAL(10, 2),
+ADD COLUMN bonus  DECIMAL(10, 2) DEFAULT 0,
+ADD COLUMN mallus DECIMAL(10, 2) DEFAULT 0;
+
+ALTER TABLE the_variete_the
+ADD COLUMN prix_vente DECIMAL(10, 2) DEFAULT 0;
+
+CREATE OR REPLACE VIEW the_v_rel_variete_the_parcelle AS
+SELECT tvt.id AS id_variete_the, tvt.nom, tvt.occupation, tvt.rendement, tvt.prix_vente, tp.id AS id_parcelle, tp.surface AS surface_parcelle
+FROM the_rel_variete_the_parcelle trvtp 
+JOIN the_variete_the tvt ON trvtp.id_variete_the = tvt.id
+JOIN the_parcelle tp ON tp.id = trvtp.id_parcelle;

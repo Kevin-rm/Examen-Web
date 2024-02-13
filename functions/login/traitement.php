@@ -20,18 +20,19 @@ if (empty($_POST['pseudo']) || empty($_POST['password']))
 $pseudo   = trim($_POST['pseudo']);
 $password = trim($_POST['password']);
 
+$membre = get_membre_by_pseudo($pseudo);
 if ($statut === 'admin') {
-    $membre = get_membre_by_pseudo($pseudo);
-    if (empty($membre) || !verify_password($password, $membre->mot_de_passe) || $membre->admin !== 1)
+    if (empty($membre) || !verify_password($password, $membre->mot_de_passe) || $membre->is_admin !== 1)
         redirect_with_error(
             'Administrateur introuvable ou mot de passe incorrect',
             LOGIN_PAGE . "?who=$statut"
         );
     else { // Redirige vers la page Admin
-        // redirect('layout_2.php?page=insertion-cueillette');
+        $_SESSION['membre']   = $membre;
+        $_SESSION['is_admin'] = true;
+        redirect('../../pages/layout/layout_3.php?page=insertion-variete-the');
     }
 } else {
-    $membre = get_membre_by_pseudo($pseudo);
     if (empty($membre) || !verify_password($password, $membre->mot_de_passe)) {
         redirect_with_error(
             'Cueilleur introuvable ou mot de passe incorrect',
@@ -39,6 +40,7 @@ if ($statut === 'admin') {
         );
     } else { // Redirige vers la page de cueilleur
         $_SESSION['membre'] = $membre;
+        $_SESSION['is_admin'] = false;
         redirect('../../pages/layout/layout_2.php?page=insertion-cueillette');
     }
 }

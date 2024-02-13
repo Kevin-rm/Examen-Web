@@ -11,8 +11,7 @@ insertCueilleteForm.addEventListener('submit', (event) => {
         processData: false,  // Don't process the data
         contentType: false,  // Don't set content type
         success: function(response) {
-
-            console.log('Data sent successfully:', response);
+            alert(response);
         },
         error: function(error) {
             console.error('Error sending data:', error);

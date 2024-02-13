@@ -2,13 +2,13 @@
 
 session_start();
 
-require_once '../../functions/cueilleur/cueilleur.php';
+require_once '../../functions/admin/admin.php';
 include_once '../../functions/utils.php';
 
 // Redirection par défaut
-$valid_pages = ['insertion-cueillette', 'insertion-depenses', 'list-with-filters'];
-if (!isset($_GET['page']) || !in_array($_GET['page'], $valid_pages))
-    redirect('../../pages/layout/layout_2.php?page=insertion-cueillette');
+//$valid_pages = ['insertion-cueillette', 'insertion-depenses', 'list-with-filters'];
+//if (!isset($_GET['page']) || !in_array($_GET['page'], $valid_pages))
+  //  redirect('../../pages/layout/layout_2.php?page=insertion-cueillette');
 
 $content_page = get_page_to_include($_GET['page']);
 ?>
@@ -82,7 +82,7 @@ $content_page = get_page_to_include($_GET['page']);
 <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
         <!-- Menu -->
-        <?php include_once('../menu.php'); ?>
+        <?php include_once('../admin/menu.php'); ?>
         <!-- / Menu -->
 
         <!-- Layout container -->
@@ -90,6 +90,50 @@ $content_page = get_page_to_include($_GET['page']);
             <!-- Navbar -->
             <?php include_once('../navbar.php'); ?>
             <!-- / Navbar -->
+
+            <?php
+            if (isset($_SESSION['success'])) {
+            ?>
+            <!-- Success pop -->
+            <div class="static-toast">
+                <div class="bs-toast toast fade show bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <i class="bx bx-bell me-2"></i>
+                        <div class="me-auto fw-semibold">Succès!</div>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        <?= $_SESSION['success'] ?>
+                    </div>
+                </div>
+            </div>
+            <!--/Success pop -->
+            <?php
+            unset($_SESSION['success']);
+            }
+            ?>
+
+            <!--Error pop -->
+            <?php
+            if (isset($_SESSION['flash_messages'])) {
+            ?>
+            <div class="static-toast">
+                <div class="bs-toast toast fade show bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <i class="bx bx-bell me-2"></i>
+                        <div class="me-auto fw-semibold">Erreur</div>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        <?= $_SESSION['flash_messages'] ?>
+                    </div>
+                </div>
+            </div>
+            <?php
+            unset($_SESSION['flash_messages']);
+            }
+            ?>
+            <!--/Error pop-->
 
             <!-- Content wrapper -->
             <div class="content-wrapper">
@@ -134,8 +178,5 @@ $content_page = get_page_to_include($_GET['page']);
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-  
-<script src="../js/layout_2.js"></script>
-
 </body>
 </html>

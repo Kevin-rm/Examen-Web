@@ -11,11 +11,11 @@
 function get_mysql_connection()
 {
     // Options par défaut
-    $host     = 'localhost';
+    $host     = '172.10.0.113';
     $port     = '3306';
-    $db_name  = 'the';
-    $user     = 'root';
-    $password = 'paradis23';
+    $db_name  = 'db_p16_ETU002530';
+    $user     = 'ETU002530';
+    $password = 'asU9UP1ClJj0';
 
     try {
         // Data source name

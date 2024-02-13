@@ -113,14 +113,14 @@ if (isset($_SESSION['flash_messages'])) {
                         <div class="mb-3">
                             <label for="pseudo" class="form-label">Pseudo</label>
                             <input type="text" class="form-control" id="pseudo" name="pseudo"
-                                   placeholder="Entrer votre pseudo" autofocus/>
+                                   placeholder="Entrer votre pseudo" value="jane_doe" autofocus/>
                         </div>
                         <div class="mb-3 form-password-toggle">
                             <div class="d-flex justify-content-between">
                                 <label class="form-label" for="password">Password</label>
                             </div>
                             <div class="input-group input-group-merge">
-                                <input type="password" id="password" class="form-control" name="password"
+                                <input type="password" id="password" class="form-control" name="password" value="jane_doe"
                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                                        aria-describedby="password"/>
                                 <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>

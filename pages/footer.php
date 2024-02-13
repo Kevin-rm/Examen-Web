@@ -6,7 +6,7 @@
                 document.write(new Date().getFullYear());
             </script>
             , made with ❤️ by
-            Karen, Kevin, Harena
+            Karen ETU002530, Kevin ETU002546, Harena ETU002353
         </div>
 
     </div>
