@@ -57,9 +57,9 @@ CREATE TABLE the_cueillette (
 CREATE TABLE the_configuration (
     salaire_cueilleur        DECIMAL(10, 2),
     poids_minimal_journalier DECIMAL(10, 2),
-    bonus                    DECIMAL(10, 2),
-    mallus                   DECIMAL(10, 2),
-    mois_regeneration        INT
+    bonus                    DECIMAL(10, 2) DEFAULT 0,
+    mallus                   DECIMAL(10, 2) DEFAULT 0,
+    mois_regeneration        INT            DEFAULT 0
 ) ENGINE=InnoDB;
 
 ALTER TABLE the_cueillette

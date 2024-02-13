@@ -29,7 +29,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="poids-cueilli">Poids cueilli</label>
-                            <input type="number" class="form-control" id="poids-cueilli" name="poids-cueilli" />
+                            <input type="text" class="form-control" id="poids-cueilli" name="poids-cueilli" />
                         </div>
                         <button type="submit" class="btn btn-primary">Confirmer</button>
                     </form>
