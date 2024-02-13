@@ -56,12 +56,28 @@ function add_depense($id_categorie_depense, $montant)
 }
 
 // Poids total cueillette entre 2 dates
-function get_poids_total_cueillette($id_cueilleur, $date_min, $date_max)
+function get_poids_total_cueillette_par_mois( $date_min, $date_max)
 {
     $query = "SELECT SUM(poids_cueilli) AS value FROM the_cueillette " .
-             "WHERE date > '$date_min' AND date < '$date_max' " .
-             "AND id_cueilleur = $id_cueilleur";
+            //  "WHERE date > '$date_min' AND date < '$date_max' " .
+            "WHERE EXTRACT(MONTH FROM date_ceuillette) = EXTRACT(MONTH FROM '$date_max') ";
+             
     return selectFromSQLRaw(null, $query)[0];
+}
+
+function get_total_rendement()
+{
+    $query="SELECT SUM(rendement) as total_rendement  
+    from the_rendement_par_parcelles";
+    return selectFromSQLRaw(null, $query)[0];
+}
+
+function get_poids_restant($date_min , $date_max)
+{
+    $poids_total_global=get_total_rendement();
+    $poids_par_mois=get_poids_total_cueillette_par_mois();
+    
+    $poids_restant=$poids_total_global-$poids_par_mois;
 }
 
 function cout_revient($id_cueilleur,$date_min,$date_max)
@@ -86,3 +102,4 @@ function add_ceuilette($date_ceuillette,$choix_parcelle,$poids_ceuilli)
     ];
     return add(null,'the_ceuillette',$data );
 }
+

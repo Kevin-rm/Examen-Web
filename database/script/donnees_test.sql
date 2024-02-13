@@ -9,10 +9,10 @@ insert into the_membre(nom,pseudo ,genre , date_naissance, mot_de_passe)values('
 insert into the_membre(nom,pseudo ,genre , date_naissance, mot_de_passe)values('Princia','Prissi','F','2000-03-23',sha2('princia',256));
 
 
-insert into the_variete_the(nom,occupation , rendement) values ('noir',200,6);
-insert into the_variete_the(nom,occupation , rendement) values ('vert',100,5);
-insert into the_variete_the(nom,occupation , rendement) values ('rouge',300,10);
-insert into the_variete_the(nom,occupation , rendement) values ('jaune',200,7);
+insert into the_variete_the(nom,occupation , rendement) values ('noir',2,6);
+insert into the_variete_the(nom,occupation , rendement) values ('vert',1,5);
+insert into the_variete_the(nom,occupation , rendement) values ('rouge',3,10);
+insert into the_variete_the(nom,occupation , rendement) values ('jaune',2,7);
 
 insert into the_parcelle(surface)values(2);
 insert into the_parcelle(surface)values(1);
