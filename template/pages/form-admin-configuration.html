@@ -51,51 +51,8 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
   </head>
-  <style>
-    .static-toast {
-        position: fixed;
-        top: 20px;
-        /* Adjust the top value as needed */
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2000;
-        /* Adjust the z-index as needed */
-    }
-</style>
+
   <body>
-     <!--SUCCESS POP-->
-     <div class="static-toast">
-      <div
-     class="bs-toast toast fade show bg-success"
-     role="alert"
-     aria-live="assertive"
-     aria-atomic="true"
-      >
-     <div class="toast-header">
-       <i class="bx bx-bell me-2"></i>
-       <div class="me-auto fw-semibold">Reussi!</div>
-       <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-     </div>
-     <div class="toast-body">
-       insertion valide
-     </div>
-   </div>
-     </div>
-   <!--/SUCCESS POP-->  
-   <!--Error pop -->
-   <div class="static-toast">
-    <div class="bs-toast toast fade show bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <i class="bx bx-bell me-2"></i>
-            <div class="me-auto fw-semibold">Erreur</div>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-            # incorrecte.
-        </div>
-    </div>
-</div>
-<!--/Error pop-->
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -147,6 +104,11 @@
                     <div data-i18n="Salaire des ceuilleurs">Salaire des ceuilleurs par kilos</div>
                   </a>
               </li>
+              <li class="menu-item">
+                <a href="form-admin-configuration.html" class="menu-link">
+                  <div data-i18n="configuration">Configuration</div>
+                </a>
+            </li>
             </ul>
           </li>
           <!-- /Insertion-->
@@ -237,27 +199,84 @@
                     </div>
                     <div class="card-body">
                         <form action="#" method="post">
-                            <div class="mb-3">
-                                <label for="mois" class="form-label">Mois</label>
-                                <select class="form-select" id="variete-the"  aria-label="Default select example" name="varite-the">
-                                  <option selected>Choix</option>
-                                  <option value="1">One</option>
-                                  <option value="2">Two</option>
-                                  <option value="3">Three</option>
-                                </select>
+                        <div class="mb-3">
+                          <label class="form-label" for="Mois">Mois</label>
+                          
+                          <div class="row gy-3">
+                            <div class="col-md">
+                              <div class="form-check mt-3">
+                                <input class="form-check-input" type="checkbox" value="01" id="mois" name="mois" />
+                                <label class="form-check-label" for="mois"> Janvier </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="02" id="mois" name="mois"/>
+                                <label class="form-check-label" for="mois"> Fevrier </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="03" id="mois" />
+                                <label class="form-check-label" for="mois"> Mars </label>
+                              </div>
                             </div>
+                            <div class="col-md">
+                              <div class="form-check mt-3">
+                                <input class="form-check-input" type="checkbox" value="04" id="mois" name="mois" />
+                                <label class="form-check-label" for="mois"> Avril</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="05" id="mois" name="mois"/>
+                                <label class="form-check-label" for="mois"> Mai </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="06" id="mois" name="mois" />
+                                <label class="form-check-label" for="mois"> Juin </label>
+                              </div>
+                            </div>
+                            <div class="col-md">
+                              <div class="form-check mt-3">
+                                <input class="form-check-input" type="checkbox" value="07" id="mois"  name="mois"/>
+                                <label class="form-check-label" for="mois"> Juillet </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="08" id="mois" name="mois" />
+                                <label class="form-check-label" for="mois"> Aout </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="09" id="mois"  name="mois"/>
+                                <label class="form-check-label" for="name"> Septembre </label>
+                              </div>
+                            </div>
+                            <div class="col-md">
+                              <div class="form-check mt-3">
+                                <input class="form-check-input" type="checkbox" value="10" id="mois" name="mois" />
+                                <label class="form-check-label" for="mois"> Octobre </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="11" id="mois" name="mois"/>
+                                <label class="form-check-label" for="defaultCheck2"> Novembre </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="mois" name="mois"/>
+                                <label class="form-check-label" for="mois"> Decembre </label>
+                              </div>
+                            </div>
+                            </div>
+                        </div>
                         <div class="mb-3">
                           <label class="form-label" for="poids-minimal-journalier">Poids minimal journalier</label>
                           <input type="number" class="form-control" id="poids-minimal-journalier" name="poids-minimal-journalier"  placeholder="Poids minimal journalier" />
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="poids-min">Poids minimum</label>
-                            <input type="number" class="form-control" id="poids-min" name="poids-min"  placeholder="poids minimum" />
+                            <label class="form-label" for="poids-min">Bonus</label>
+                            <input type="number" class="form-control" id="bonus" name="bonus"  placeholder="bonus" />
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="poids-max">Poids maximum</label>
-                            <input type="number" class="form-control" id="poids-max" name="poids-max" placeholder="poids maximum" />
+                            <label class="form-label" for="poids-max">Mallus</label>
+                            <input type="number" class="form-control" id="mallus" name="mallus" placeholder="mallus" />
                         </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="prix-vente">Prix vente</label>
+                          <input type="number" class="form-control" id="prix-vente" name="prix-vente" placeholder="prix de vente" />
+                      </div>
                         <input type="submit" value="Envoyer" class="btn btn-primary">
                       </form>
                     </div>
