@@ -17,7 +17,9 @@ else {
     $poids_cueilli     = trim($_POST['poids-cueilli']);
     $cueilleur         = trim($_POST['cueilleur']);
 
-    add_cueillette($cueilleur, $parcelle, $poids_cueilli, $date);
+    // Vérification du poids_cueilli
+
+    //add_cueillette($cueilleur, $parcelle, $poids_cueilli, $date);
     $response = 'Insertion de cueillette réussie';
 }
 

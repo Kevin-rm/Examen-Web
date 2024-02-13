@@ -52,3 +52,17 @@ CREATE TABLE the_cueillette (
     poids_cueilli DECIMAL(10, 2),
     date          DATE
 ) ENGINE=InnoDB;
+
+-- Partie 2/3
+CREATE TABLE the_configuration (
+    salaire_cueilleur        DECIMAL(10, 2),
+    poids_minimal_journalier DECIMAL(10, 2),
+    bonus                    DECIMAL(10, 2),
+    mallus                   DECIMAL(10, 2),
+    mois_regeneration        INT
+) ENGINE=InnoDB;
+
+ALTER TABLE the_cueillette
+ADD COLUMN poids_minimal_journalier DECIMAL(10, 2),
+ADD COLUMN bonus DECIMAL(10, 2),
+ADD COLUMN mallus DECIMAL(10, 2);
