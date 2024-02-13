@@ -64,11 +64,11 @@ CREATE TABLE the_configuration (
 
 ALTER TABLE the_cueillette
 ADD COLUMN poids_minimal_journalier DECIMAL(10, 2),
-ADD COLUMN bonus DECIMAL(10, 2),
-ADD COLUMN mallus DECIMAL(10, 2);
+ADD COLUMN bonus  DECIMAL(10, 2) DEFAULT 0,
+ADD COLUMN mallus DECIMAL(10, 2) DEFAULT 0;
 
 ALTER TABLE the_variete_the
-ADD COLUMN prix_vente DECIMAL(10, 2);
+ADD COLUMN prix_vente DECIMAL(10, 2) DEFAULT 0;
 
 CREATE OR REPLACE VIEW the_v_rel_variete_the_parcelle AS
 SELECT tvt.id AS id_variete_the, tvt.nom, tvt.occupation, tvt.rendement, tvt.prix_vente, tp.id AS id_parcelle, tp.surface AS surface_parcelle

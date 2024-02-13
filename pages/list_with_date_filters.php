@@ -97,8 +97,105 @@
                     </div>
                 </div>
                 <!--/ Poids restant -->
+
+                <!-- Montant des ventes  -->
+                <div class="col-lg-6 col-md-12 col-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title d-flex align-items-start justify-content-between">
+                                <div class="avatar flex-shrink-0">
+                                    <img
+                                            src="../../assets/img/icons/unicons/paypal.png"
+                                            alt="Credit Card"
+                                            class="rounded"
+                                    />
+                                </div>
+                                <div class="dropdown">
+
+                                </div>
+                            </div>
+                            <span>montant des ventes</span>
+                            <h3 class="card-title text-nowrap mb-1">$4,679</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Montant des ventes -->
+                <!-- Montant des depenses  -->
+                <div class="col-lg-6 col-md-12 col-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title d-flex align-items-start justify-content-between">
+                                <div class="avatar flex-shrink-0">
+                                    <img
+                                            src="../../assets/img/icons/unicons/paypal.png"
+                                            alt="Credit Card"
+                                            class="rounded"
+                                    />
+                                </div>
+                                <div class="dropdown">
+                                </div>
+                            </div>
+                            <span>montant des depenses</span>
+                            <h3 class="card-title text-nowrap mb-1">$4,679</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Montant des depensnes -->
+                <!-- Montant des depenses  -->
+                <div class="col-lg-6 col-md-12 col-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title d-flex align-items-start justify-content-between">
+                                <div class="avatar flex-shrink-0">
+                                    <img
+                                            src="../../assets/img/icons/unicons/paypal.png"
+                                            alt="Credit Card"
+                                            class="rounded"
+                                    />
+                                </div>
+                                <div class="dropdown">
+                                </div>
+                            </div>
+                            <span>montant des depenses</span>
+                            <h3 class="card-title text-nowrap mb-1">$4,679</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Montant des depensnes -->
             </div>
         </div>
+
+        <!-- Paiement pour les cueilleurs -->
+        <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4 flex-column">
+            <div class="card flex-column">
+                <h5 class="card-header">Paiement pour les ceuilleurs</h5>
+                <div class="table-responsive text-nowrap">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Nom ceuilleur</th>
+                            <th>Poids</th>
+                            <th>bonus</th>
+                            <th>mallus</th>
+                            <th>montant paiement</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-border-bottom-0">
+                        <tr>
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong></td>
+                            <td>Albert Cook</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>20000ar</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- /paiement pour les ceuilleur-->
     </div>
 </div>
 
