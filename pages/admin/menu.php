@@ -24,7 +24,7 @@
                 <div data-i18n="Gestion">Gestion</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item active">
+                <li class="menu-item">
                     <a href="?page=insertion-variete-the" class="menu-link">
                         <div data-i18n="Variete the">Variete the</div>
                     </a>
@@ -39,13 +39,13 @@
                         <div data-i18n="Ceuilleur">Ceuilleur</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item active">
                     <a href="?page=insertion-categorie-depense" class="menu-link">
                         <div data-i18n="Categorie Depense">Categorie Depense</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="form-admin-salaire-ceuilleur.html" class="menu-link">
                         <div data-i18n="Salaire des ceuilleurs">Salaire des ceuilleurs par kilos</div>
                     </a>
                 </li>
@@ -65,27 +65,27 @@
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="" class="menu-link">
+                    <a href="list-admin-variete-the.html" class="menu-link">
                         <div data-i18n="Variete de the">Variete de the</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="" class="menu-link">
+                    <a href="list-admin-parcelle.html" class="menu-link">
                         <div data-i18n="Parcelle">Parcelle</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="" class="menu-link">
+                    <a href="list-admin-ceuilleur.html" class="menu-link">
                         <div data-i18n="Ceuilleur">Ceuilleur</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="" class="menu-link">
+                    <a href="list-admin-categorie-depense.html" class="menu-link">
                         <div data-i18n="Categorie">Categorie depense</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="" class="menu-link">
+                    <a href="list-admin-salaire-ceuilleur.html" class="menu-link">
                         <div data-i18n="Salaire">Salaire des ceuilleurs par kilos</div>
                     </a>
                 </li>
