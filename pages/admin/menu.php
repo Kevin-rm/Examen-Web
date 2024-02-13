@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="?page=insertion-variete-the" class="app-brand-link">
+        <a href="?page=list-variete-the" class="app-brand-link">
             <span class="app-brand-text demo menu-text fw-bolder ms-2">Gestion de thé</span>
         </a>
 
@@ -13,16 +13,11 @@
 
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
-
         <!-- Insertion-->
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Insertion</span>
         </li>
-        <li class="menu-item active open">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Gestion">Gestion</div>
-            </a>
+        <li class="menu-item open">
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="?page=insertion-variete-the" class="menu-link">
@@ -39,7 +34,7 @@
                         <div data-i18n="Ceuilleur">Ceuilleur</div>
                     </a>
                 </li>
-                <li class="menu-item active">
+                <li class="menu-item ">
                     <a href="?page=insertion-categorie-depense" class="menu-link">
                         <div data-i18n="Categorie Depense">Categorie Depense</div>
                     </a>
@@ -57,12 +52,7 @@
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Liste</span>
         </li>
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Gestion">Gestion</div>
-            </a>
-
+        <li class="menu-item open">
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="?page=list-variete-the" class="menu-link">
@@ -70,17 +60,17 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="list-admin-parcelle.html" class="menu-link">
+                    <a href="?page=list-parcelle" class="menu-link">
                         <div data-i18n="Parcelle">Parcelle</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="list-admin-ceuilleur.html" class="menu-link">
+                    <a href="?page=list-cueilleur" class="menu-link">
                         <div data-i18n="Ceuilleur">Ceuilleur</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="list-admin-categorie-depense.html" class="menu-link">
+                    <a href="?page=list-categorie-depense" class="menu-link">
                         <div data-i18n="Categorie">Categorie depense</div>
                     </a>
                 </li>

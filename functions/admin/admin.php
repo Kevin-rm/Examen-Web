@@ -32,6 +32,15 @@ function get_page_to_include($page)
         case 'list-variete-the':
             $valiny .= 'list_variete_the';
             break;
+        case 'list-parcelle':
+            $valiny .= 'list_parcelle';
+            break;
+        case 'list-cueilleur':
+            $valiny .= 'list_cueilleur';
+            break;
+        case 'list-categorie-depense':
+            $valiny .= 'list_categorie_depense';
+            break;
         default:
             break;
     }
@@ -73,7 +82,20 @@ function get_all_variete_the()
     return findAll(null,'the_variete_the');
 }
 
+function get_all_parcelle()
+{
+    return findAll(null,'the_parcelle');
+}
 
+function get_all_membre()
+{
+    return findAll(null,'the_membre');
+}
+
+function get_all_categorie_depense()
+{
+    return findAll(null,'the_categorie_depense');
+}
 // Partie 2/3
 
 
