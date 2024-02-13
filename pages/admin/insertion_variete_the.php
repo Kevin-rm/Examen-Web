@@ -10,7 +10,9 @@
                     <small class="text-muted float-end">admin</small>
                 </div>
                 <div class="card-body">
-                    <form action="#" method="post">
+                    <form action="../../functions/admin/traitement.php" method="post">
+                        <input type="hidden" name="to-insert" value="variete_the">
+                        <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
                         <div class="mb-3">
                             <label class="form-label" for="nom">Nom</label>
                             <input type="text" class="form-control" id="nom" name="nom"  placeholder="nom" />
@@ -21,7 +23,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="rendement">Rendement</label>
-                            <input type="number" class="form-control" id="rendement" name="rendement" placeholder="rendement" />
+                            <input type="text" class="form-control" id="rendement" name="rendement" placeholder="rendement" />
                         </div>
                         <input type="submit" value="Envoyer" class="btn btn-primary">
                     </form>

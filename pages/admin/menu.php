@@ -45,7 +45,7 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="form-admin-salaire-ceuilleur.html" class="menu-link">
+                    <a href="" class="menu-link">
                         <div data-i18n="Salaire des ceuilleurs">Salaire des ceuilleurs par kilos</div>
                     </a>
                 </li>

@@ -10,13 +10,13 @@
                     <small class="text-muted float-end">admin</small>
                 </div>
                 <div class="card-body">
-                    <form action="#" method="post">
-
+                    <form action="../../functions/admin/traitement.php" method="post">
+                        <input type="hidden" name="to-insert" value="categorie-depense">
+                        <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
                         <div class="mb-3">
                             <label class="form-label" for="nom">Nom</label>
                             <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" />
                         </div>
-
                         <input type="submit" value="Envoyer" class="btn btn-primary">
                     </form>
                 </div>

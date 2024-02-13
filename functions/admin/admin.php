@@ -1,5 +1,7 @@
 <?php
 
+require_once '../../database/crud_operations.php';
+
 // Partie 1/3
 function add_variete_the($nom, $occupation, $rendement)
 {
@@ -33,6 +35,36 @@ function get_page_to_include($page)
 
     return $valiny . '.php';
 }
+
+function add_cueilleur($nom , $pseudo, $genre, $date_de_naissance, $mot_de_passe)
+{
+    $data= [
+        "nom"            => $nom,
+        "pseudo"         => $pseudo,
+        "genre"          => $genre,
+        "date_naissance" => $date_de_naissance,
+        "mot_de_passe"   => hash('sha256', $mot_de_passe)
+    ];
+    return add(null,'the_membre',$data );
+}
+
+function add_categorie_depense($categorie)
+{
+    $data= [
+        "categorie"=>$categorie
+    ];
+    return add(null,'the_categorie_depense',$data );
+}
+
+function add_parcelle($surface)
+{
+    $data=
+        [
+            "surface"=>$surface,
+        ];
+    return add(null,'the_parcelle',$data );
+}
+
 
 
 // Partie 2/3
