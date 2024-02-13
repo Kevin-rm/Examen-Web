@@ -17,17 +17,23 @@ if ($to_insert === 'variete_the') {
     if (
         empty($_POST['nom']) ||
         empty($_POST['occupation']) ||
-        empty($_POST['rendement'])
+        empty($_POST['rendement']) ||
+        empty($_POST['prix-vente'])
     ) redirect_with_error('Veuillez remplir tout le formulaire', $admin_layout);
 
     $nom = trim($_POST['nom']);
     $occupation = trim($_POST['occupation']);
     $rendement = trim($_POST['rendement']);
+    $prix_vente = trim($_POST['prix-vente']);
 
-    if ($occupation <= 0) redirect_with_error('Occupation non valide', $admin_layout);
-    if ($rendement <= 0 || !is_numeric($rendement))  redirect_with_error('Rendement invalide', $admin_layout);
+    if (!filter_var($occupation, FILTER_VALIDATE_INT))
+        redirect_with_error('Occupation doit être un nombre entier', $admin_layout);
 
-    add_variete_the($nom, $occupation, $rendement);
+    if ($occupation <= 0)                              redirect_with_error('Occupation non valide', $admin_layout);
+    if ($rendement  <= 0  || !is_numeric($rendement))  redirect_with_error('Rendement invalide', $admin_layout);
+    if ($prix_vente <= 0  || !is_numeric($rendement))  redirect_with_error('Prix de vente invalide', $admin_layout);
+
+    add_variete_the($nom, $occupation, $rendement, $prix_vente);
     redirect_with_success('Insertion de variété avec succès', $admin_layout);
 
 } elseif ($to_insert === 'parcelle') {
@@ -44,18 +50,14 @@ if ($to_insert === 'variete_the') {
     if (
         empty($_POST['nom']) ||
         empty($_POST['genre']) ||
-        empty($_POST['pseudo']) ||
-        empty($_POST['date-naissance']) ||
-        empty($_POST['password'])
+        empty($_POST['date-naissance'])
     ) redirect_with_error('Veuillez remplir tout le formulaire', $admin_layout);
 
-    $nom = trim($_POST['nom']);
-    $genre = trim($_POST['genre']);
-    $pseudo = trim($_POST['pseudo']);
+    $nom            = trim($_POST['nom']);
+    $genre          = trim($_POST['genre']);
     $date_naissance = trim($_POST['date-naissance']);
-    $password = trim($_POST['password']);
 
-    add_cueilleur($nom, $pseudo, $genre, $date_naissance, $password);
+    add_cueilleur($nom, $genre, $date_naissance);
     redirect_with_success('Insertion de cueilleur réussie', $admin_layout);
 } elseif ($to_insert === 'categorie-depense') {
     if (empty($_POST['nom'])) redirect_with_error('Veuillez remplir tout le formulaire', $admin_layout);

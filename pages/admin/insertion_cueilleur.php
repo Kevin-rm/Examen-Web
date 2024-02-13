@@ -1,5 +1,5 @@
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Insertion/</span> Ceuilleur</h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Insertion/</span>Cueilleur</h4>
 
     <!-- Layout -->
     <div class="row">
@@ -18,10 +18,6 @@
                             <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" />
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="pseudo">Pseudo</label>
-                            <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="pseudo" />
-                        </div>
-                        <div class="mb-3">
                             <label class="form-label" for="genre">Genre</label>
                             <select name="genre" id="genre" class="form-select">
                                 <option value="M" selected>Homme</option>
@@ -31,10 +27,6 @@
                         <div class="mb-3">
                             <label class="form-label" for="date-naissance">Date de naissance</label>
                             <input type="date" class="form-control" id="date-naissance" name="date-naissance" />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="password">Mot de passe</label>
-                            <input type="password" class="form-control" id="password" name="password" />
                         </div>
                         <input type="submit" value="Envoyer" class="btn btn-primary">
                     </form>

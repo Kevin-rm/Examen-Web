@@ -3,12 +3,13 @@
 require_once '../../database/crud_operations.php';
 
 // Partie 1/3
-function add_variete_the($nom, $occupation, $rendement)
+function add_variete_the($nom, $occupation, $rendement, $prix_vente)
 {
     $data= [
         'nom'        => $nom,
         'occupation' => $occupation,
-        'rendement'  => $rendement
+        'rendement'  => $rendement,
+        'prix_vente' => $prix_vente
     ];
     return add(null,'the_variete_the', $data);
 }
@@ -48,16 +49,14 @@ function get_page_to_include($page)
     return $valiny . '.php';
 }
 
-function add_cueilleur($nom , $pseudo, $genre, $date_de_naissance, $mot_de_passe)
+function add_cueilleur($nom, $genre, $date_de_naissance)
 {
     $data= [
         "nom"            => $nom,
-        "pseudo"         => $pseudo,
         "genre"          => $genre,
-        "date_naissance" => $date_de_naissance,
-        "mot_de_passe"   => hash('sha256', $mot_de_passe)
+        "date_naissance" => $date_de_naissance
     ];
-    return add(null,'the_membre',$data );
+    return add(null,'the_membre', $data);
 }
 
 function add_categorie_depense($categorie)

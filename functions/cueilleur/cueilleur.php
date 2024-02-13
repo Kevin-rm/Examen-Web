@@ -94,3 +94,13 @@ function get_cout_revient($id_cueilleur, $date_min, $date_max)
 
     return $depense_total / $poids_total_cueillette;
 }
+
+function get_poids_restant_par_parcelle($id_parcelle, $date_min)
+{
+
+}
+
+function get_poids_cueilli_par_parcelle($id_parcelle, $date)
+{
+
+}

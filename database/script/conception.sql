@@ -69,3 +69,9 @@ ADD COLUMN mallus DECIMAL(10, 2);
 
 ALTER TABLE the_variete_the
 ADD COLUMN prix_vente DECIMAL(10, 2);
+
+CREATE OR REPLACE VIEW the_v_rel_variete_the_parcelle AS
+SELECT tvt.id AS id_variete_the, tvt.nom, tvt.occupation, tvt.rendement, tvt.prix_vente, tp.id AS id_parcelle, tp.surface AS surface_parcelle
+FROM the_rel_variete_the_parcelle trvtp 
+JOIN the_variete_the tvt ON trvtp.id_variete_the = tvt.id
+JOIN the_parcelle tp ON tp.id = trvtp.id_parcelle;

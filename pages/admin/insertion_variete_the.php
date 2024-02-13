@@ -19,11 +19,15 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="occupation">Occupation</label>
-                            <input type="number" class="form-control" id="occupation" name="occupation"  placeholder="occupation" />
+                            <input type="number" class="form-control" id="occupation" name="occupation"  placeholder="Occupation en pieds" />
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="rendement">Rendement</label>
-                            <input type="text" class="form-control" id="rendement" name="rendement" placeholder="rendement" />
+                            <input type="text" class="form-control" id="rendement" name="rendement" placeholder="Rendement par kilogrammes" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="prix-vente">Prix vente</label>
+                            <input type="text" class="form-control" id="prix-vente" name="prix-vente" placeholder="Prix de vente" />
                         </div>
                         <input type="submit" value="Envoyer" class="btn btn-primary">
                     </form>
