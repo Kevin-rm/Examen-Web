@@ -131,8 +131,6 @@ function delete_categorie_depense($id)
 {
     return delete(null,'the_categorie_depense','id=$id');
 }
-
-
 //configuration salaire 
 function add_depense($id,$montant)
 {
