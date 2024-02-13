@@ -42,6 +42,9 @@ function get_page_to_include($page)
         case 'list-categorie-depense':
             $valiny .= 'list_categorie_depense';
             break;
+        case 'configuration':
+            $valiny .= 'configuration';
+            break;
         default:
             break;
     }

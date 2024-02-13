@@ -28,7 +28,8 @@ if ($statut === 'admin') {
             LOGIN_PAGE . "?who=$statut"
         );
     else { // Redirige vers la page Admin
-        $_SESSION['membre'] = $membre;
+        $_SESSION['membre']   = $membre;
+        $_SESSION['is_admin'] = true;
         redirect('../../pages/layout/layout_3.php?page=insertion-variete-the');
     }
 } else {
@@ -39,6 +40,7 @@ if ($statut === 'admin') {
         );
     } else { // Redirige vers la page de cueilleur
         $_SESSION['membre'] = $membre;
+        $_SESSION['is_admin'] = false;
         redirect('../../pages/layout/layout_2.php?page=insertion-cueillette');
     }
 }

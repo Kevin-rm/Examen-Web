@@ -8,9 +8,12 @@
                 <span class="fw-semibold d-block"><?php echo 'Nom : ' . $_SESSION['membre']->nom . '. Pseudo : ' . $_SESSION['membre']->pseudo; ?></span>
                 <small class="text-muted">
                     <?php
-                    if ($_SESSION['membre']->is_admin === 0) {
-                        echo 'Utilisateur';
-                    } else echo 'Administrateur';
+                    $connexion_message = 'Connecté en tant ';
+                    if (!$_SESSION['is_admin']) {
+                        $connexion_message .= 'qu\'utilisateur';
+                    } else $connexion_message .= 'qu\'administrateur';
+
+                    echo $connexion_message;
                     ?>
                 </small>
             </div>

@@ -44,6 +44,11 @@
                         <div data-i18n="Salaire des ceuilleurs">Salaire des cueilleurs par kilos</div>
                     </a>
                 </li>
+                <li class="menu-item">
+                    <a href="?page=configuration" class="menu-link">
+                        <div data-i18n="">Configuration</div>
+                    </a>
+                </li>
             </ul>
         </li>
         <!-- /Insertion-->
