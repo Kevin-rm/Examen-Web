@@ -16,7 +16,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Categorie depense - Forms</title>
+    <title>categorie - Table</title>
 
     <meta name="description" content="" />
 
@@ -42,8 +42,6 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-     <!--CSS error-->
-     <link rel="stylesheet" href="../assets/css/erreur.css">
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -80,13 +78,13 @@
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Insertion</span>
             </li>
-            <li class="menu-item active open">
+            <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div data-i18n="Gestion">Gestion</div>
               </a>
               <ul class="menu-sub">
-                <li class="menu-item">
+                <li class="menu-item active">
                   <a href="form-admin-variete-the.html" class="menu-link">
                     <div data-i18n="Variete the">Variete the</div>
                   </a>
@@ -101,7 +99,7 @@
                       <div data-i18n="Ceuilleur">Ceuilleur</div>
                     </a>
                 </li>
-                <li class="menu-item active">
+                <li class="menu-item">
                     <a href="form-admin-categorie-depense.html" class="menu-link">
                       <div data-i18n="Categorie Depense">Categorie Depense</div>
                     </a>
@@ -117,42 +115,42 @@
 
             <!-- Liste -->
             <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Liste</span>
-            </li>
-          <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Gestion">Gestion</div>
-              </a>
-
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="list-admin-variete-the.html" class="menu-link">
-                    <div data-i18n="Variete de the">Variete de the</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="list-admin-parcelle.html" class="menu-link">
-                    <div data-i18n="Parcelle">Parcelle</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="list-admin-ceuilleur.html" class="menu-link">
-                    <div data-i18n="Ceuilleur">Ceuilleur</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="list-admin-categorie-depense.html" class="menu-link">
-                    <div data-i18n="Categorie">Categorie depense</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="list-admin-salaire-ceuilleur.html" class="menu-link">
-                    <div data-i18n="Salaire">Salaire par kilos</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
+                <span class="menu-header-text">Liste</span>
+              </li>
+            <li class="menu-item active open">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons bx bx-detail"></i>
+                  <div data-i18n="Gestion">Gestion</div>
+                </a>
+  
+                <ul class="menu-sub">
+                  <li class="menu-item">
+                    <a href="list-admin-variete-the.html" class="menu-link">
+                      <div data-i18n="Variete de the">Variete de the</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="list-admin-parcelle.html" class="menu-link">
+                      <div data-i18n="Parcelle">Parcelle</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="list-admin-ceuilleur.html" class="menu-link">
+                      <div data-i18n="Ceuilleur">Ceuilleur</div>
+                    </a>
+                  </li>
+                  <li class="menu-item active">
+                    <a href="list-admin-categorie-depense.html" class="menu-link">
+                      <div data-i18n="Categorie">Categorie depense</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="list-admin-salaire-ceuilleur.html" class="menu-link">
+                      <div data-i18n="Salaire">Salaire par kilos</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
               <!--/Liste-->
             
           </ul>
@@ -164,43 +162,42 @@
           <!-- Navbar -->
 
           <nav
-          class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-          id="layout-navbar"
-        >
-          <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-            <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
-              <i class="bx bx-menu bx-sm"></i>
-            </a>
-          </div>
+            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            id="layout-navbar"
+          >
+            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                <i class="bx bx-menu bx-sm"></i>
+              </a>
+            </div>
 
-          <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-            <a class="dropdown-item" href="#">
-              <div class="d-flex">
-                <div class="flex-shrink-0 me-3">
-                  <div class="avatar avatar-online">
-                    <img src="../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
+            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+              <a class="dropdown-item" href="#">
+                <div class="d-flex">
+                  <div class="flex-shrink-0 me-3">
+                    <div class="avatar avatar-online">
+                      <img src="../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
+                    </div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <span class="fw-semibold d-block">John Doe</span>
+                    <small class="text-muted">Admin</small>
                   </div>
                 </div>
-                <div class="flex-grow-1">
-                  <span class="fw-semibold d-block">John Doe</span>
-                  <small class="text-muted">Admin</small>
-                </div>
-              </div>
-            </a>
-            <ul class="navbar-nav flex-row align-items-center ms-auto">
+              </a>
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
 
-              <!-- User -->
-              <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                <a class="dropdown-item" href="auth-login.html">
-                  <i class="bx bx-power-off me-2"></i>
-                  <span class="align-middle">Log Out</span>
-                </a>
-              </li>
-              <!--/ User -->
-            </ul>
-          </div>
-        </nav>
-
+                <!-- User -->
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a class="dropdown-item" href="auth-login.html">
+                    <i class="bx bx-power-off me-2"></i>
+                    <span class="align-middle">Log Out</span>
+                  </a>
+                </li>
+                <!--/ User -->
+              </ul>
+            </div>
+          </nav>
           <!-- / Navbar -->
 
           <!-- Content wrapper -->
@@ -208,33 +205,42 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-                <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Insertion/</span> Categorie depense</h4>
-  
-                <!-- Layout -->
-                <div class="row">
-                  <div class="col-xl">
-                    <div class="card mb-4">
-                      <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Saisie</h5>
-                        <small class="text-muted float-end">admin</small>
-                      </div>
-                      <div class="card-body">
-                        <form action="#" method="post">
-                          
-                          <div class="mb-3">
-                            <label class="form-label" for="nom">Nom</label>
-                            <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" />
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Liste/</span> categorie depense</h4>
+
+             <!-- Basic Bootstrap Table -->
+             <div class="card">
+              <h5 class="card-header"></h5>
+                <div class="table-responsive text-nowrap">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Type</th>
+                        <th>Actions</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                      <tr>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong></td>
+                        <td>salaire</td>
+                        <td>
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                              <a class="dropdown-item" href="#"><i class="bx bx-trash me-1"></i> Delete</a>
+                            </div>
                           </div>
-                          
-                          <input type="submit" value="Envoyer" class="btn btn-primary">
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                  </div>
+                        </td>
+                      </tr> 
+                    </tbody>
+                  </table>
                 </div>
               </div>
-              <!-- / Content -->
+              <!--/ Basic Bootstrap Table -->
 
             <!-- Footer -->
  <footer class="content-footer footer bg-footer-theme">
@@ -242,7 +248,7 @@
       <div class="mb-2 mb-md-0">
         ©
         <script>
-          document.write(new Date().getFullYear());
+            document.write(new Date().getFullYear());
         </script>
         , made with ❤️ by
         Karen,Kevin,Harena
@@ -282,7 +288,6 @@
 
 <!-- Page JS -->
 <script src="../assets/js/dashboards-analytics.js"></script>
-
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
