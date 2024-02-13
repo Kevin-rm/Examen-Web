@@ -39,14 +39,16 @@ CREATE TABLE the_categorie_depense (
 
 CREATE TABLE the_depense (
     id                   INT PRIMARY KEY AUTO_INCREMENT,
+    id_cueilleur         INT REFERENCES the_membre(id),
     id_categorie_depense INT REFERENCES the_categorie_depense(id),
     montant              DECIMAL(10, 2),
     date                 DATE
 ) ENGINE=InnoDB;
 
 CREATE TABLE the_cueillette (
-    date          DATE,
+    id            INT PRIMARY KEY AUTO_INCREMENT,
     id_cueilleur  INT REFERENCES the_membre(id),
     id_parcelle   INT REFERENCES the_parcelle(id),
-    poids_cueilli DECIMAL(10, 2)
+    poids_cueilli DECIMAL(10, 2),
+    date          DATE
 ) ENGINE=InnoDB;

@@ -23,7 +23,8 @@ form.addEventListener('submit', (event) => {
         success: function(response) {
             if (response['message'] !== '') alert(response['message']);
             else {
-                listh3[1].innerHTML = response['data']['poids_total_cueillette'].value;
+                listh3[0].innerHTML = response['data']['cout_revient'];
+                listh3[1].innerHTML = response['data']['poids_total_cueillette'];
             }
         },
         error: function(error) {

@@ -7,7 +7,7 @@
                         <div class="card-body">
                             <h5 class="card-title text-primary">Liste</h5>
                             <p class="mb-4">
-                                Recherche globale du coût de revient, poids de cueillette totale, poids restant sur les parcelles
+                                Recherche globale du coût de revient, poids de cueillette total, poids restant sur les parcelles
                                 entre deux dates données
                             </p>
                             <form>

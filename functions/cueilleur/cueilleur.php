@@ -49,9 +49,10 @@ function categorie_depense_exists($id_categorie_depense)
     );
 }
 
-function add_depense($id_categorie_depense, $montant, $date)
+function add_depense($id_cueilleur, $id_categorie_depense, $montant, $date)
 {
     $data= [
+        'id_cueilleur'         => $id_cueilleur,
         'id_categorie_depense' => $id_categorie_depense,
         'montant'              => $montant,
         'date'                 => $date
@@ -59,23 +60,37 @@ function add_depense($id_categorie_depense, $montant, $date)
     return add(null,'the_depense', $data);
 }
 
+function add_cueillette($id_cueilleur, $id_parcelle, $poids_cueilli, $date)
+{
+    $data= [
+        'id_cueilleur'  => $id_cueilleur,
+        'id_parcelle'   => $id_parcelle,
+        'poids_cueilli' => $poids_cueilli,
+        'date'          => $date
+    ];
+    return add(null, 'the_cueillette', $data);
+}
+
 // Poids total cueillette entre 2 dates
 function get_poids_total_cueillette($id_cueilleur, $date_min, $date_max)
 {
     $query = "SELECT SUM(poids_cueilli) AS value FROM the_cueillette " .
-             "WHERE date > '$date_min' AND date < '$date_max' " .
+             "WHERE date BETWEEN '$date_min' AND '$date_max' " .
              "AND id_cueilleur = $id_cueilleur";
-    return selectFromSQLRaw(null, $query)[0];
+
+    return selectFromSQLRaw(null, $query)[0]->value;
 }
 
 function get_cout_revient($id_cueilleur, $date_min, $date_max)
 {
     $query = "SELECT SUM(montant) AS value FROM the_depense " .
-        "WHERE date_depense between :date_min and :date_max ";
+             "WHERE date BETWEEN '$date_min' AND '$date_max' " .
+             "AND id_cueilleur = $id_cueilleur";
 
-    $cout_total = selectFromSQLRaw(null, $query)[0];
-    $poids_total = get_poids_total_cueillette($id_cueilleur, $date_min, $date_max);
-    $cout_revient = $cout_total / $poids_total;
+    $depense_total          = selectFromSQLRaw(null, $query)[0]->value;
+    $poids_total_cueillette = get_poids_total_cueillette($id_cueilleur, $date_min, $date_max);
 
-    return $cout_revient;
+    if ($poids_total_cueillette === 0) return 0;
+
+    return $depense_total / $poids_total_cueillette;
 }

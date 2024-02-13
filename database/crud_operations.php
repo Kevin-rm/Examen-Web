@@ -51,7 +51,7 @@ function findWithFilters($connection, $tableName, $whereCondition, ...$columnsTo
     if (!is_string($whereCondition)) throw new InvalidArgumentException('La condition de filtrage doit être une chaîne de caractères');
 
     foreach ($columnsToShow as $column)
-        if (is_string($column)) throw new InvalidArgumentException('Chaque élément de $columnsToShow doit être une chaîne de caractères');
+        if (!is_string($column)) throw new InvalidArgumentException('Chaque élément de $columnsToShow doit être une chaîne de caractères');
 
     $columns = (count($columnsToShow) == 1 && empty($columnsToShow[0]) || empty($columnsToShow)) ? '*' : implode(", ", $columnsToShow);
     try {

@@ -36,11 +36,11 @@ VALUES
     ('Arrosage');
 
 -- Ajout de dépenses
-INSERT INTO the_depense (id_categorie_depense, montant, date)
+INSERT INTO the_depense (id_cueilleur, id_categorie_depense, montant, date)
 VALUES
-    (1, 50.00, '2024-02-12'),
-    (2, 30.00, '2024-02-13'),
-    (3, 20.00, '2024-02-14');
+    (1, 1, 50.00, '2024-02-12'),
+    (2, 2, 30.00, '2024-02-13'),
+    (3, 3, 20.00, '2024-02-14');;
 
 -- Ajout de cueillettes
 INSERT INTO the_cueillette (date, id_cueilleur, id_parcelle, poids_cueilli)

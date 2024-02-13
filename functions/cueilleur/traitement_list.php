@@ -19,7 +19,9 @@ else {
     if ($date_min > $date_max)
         $response['message'] = 'La date de début doit être inférieure ou égale à date de fin';
     else { // Mety
-        $response['data']['poids_total_cueillette'] = get_poids_total_cueillette($_SESSION['membre']->id, $date_min, $date_max);
+        $id = $_SESSION['membre']->id;
+        $response['data']['poids_total_cueillette'] = get_poids_total_cueillette($id, $date_min, $date_max);
+        $response['data']['cout_revient']           = get_cout_revient          ($id, $date_min, $date_max);
     }
 }
 
